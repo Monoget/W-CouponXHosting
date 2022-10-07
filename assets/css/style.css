@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'sf-pro-regular';
+    src: url('../fonts/sf-pro-text_regular.woff2');
+}
+
+@font-face {
+    font-family: 'sf-pro-semibold';
+    src: url('../fonts/sf-pro-text_semibold.woff2');
+}
+
+@font-face {
+    font-family: 'sf-pro-bold';
+    src: url('../fonts/sf-pro-text_bold.woff2');
+}
