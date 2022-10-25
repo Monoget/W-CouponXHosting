@@ -67,3 +67,7 @@
     border-radius: 50%;
     background: black;
 }
+
+.checked {
+    color: #4f0381;
+}
