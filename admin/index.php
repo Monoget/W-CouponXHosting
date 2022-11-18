@@ -2,6 +2,34 @@
 session_start();
 require_once("../include/dbcontroller.php");
 $db_handle = new DBController();
+if (isset($_POST["submit"])) {
+    $email = $db_handle->checkValue($_POST['email']);
+    $password = $db_handle->checkValue($_POST['password']);
+
+    $login = $db_handle->numRows("SELECT * FROM admin_login WHERE email='$email' and password='$password'");
+
+    $login_data = $db_handle->runQuery("SELECT * FROM admin_login WHERE email='$email' and password='$password'");
+
+    if($login==1){
+        $_SESSION['userid']=$login_data[0]["id"];
+
+        echo "<script>
+                document.cookie = 'alert = 1;';
+                window.location.href='Dashboard';
+                </script>";
+    }else{
+        echo "<script>
+                document.cookie = 'alert = 5;';
+                window.location.href='Login';
+                </script>";
+    }
+}
+
+if(isset($_SESSION["userid"])){
+    echo "<script>
+                window.location.href='Dashboard';
+                </script>";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en" class="h-100">
@@ -24,6 +52,16 @@ $db_handle = new DBController();
 	<!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="public/images/favicon.png" />
     <link href="public/css/style.css" rel="stylesheet">
+    <link href="public/vendor/toastr/css/toastr.min.css" rel="stylesheet" type="text/css"/>
+    <style>
+        .toast-success {
+            background-color: #5fb46e;
+        }
+
+        .toast-error {
+            background-color: #b50000;
+        }
+    </style>
 
 </head>
 
@@ -40,17 +78,17 @@ $db_handle = new DBController();
                                         <h1>CouponXHosting</h1>
 									</div>
                                     <h4 class="text-center mb-4">Sign in your account</h4>
-                                    <form action="https://dompet.dexignlab.com/xhtml/index.html">
+                                    <form action="Login" method="post">
                                         <div class="mb-3">
                                             <label class="mb-1"><strong>Email</strong></label>
-                                            <input type="email" class="form-control" placeholder="hello@example.com">
+                                            <input type="email" class="form-control" name="email" placeholder="hello@example.com">
                                         </div>
                                         <div class="mb-3">
                                             <label class="mb-1"><strong>Password</strong></label>
-                                            <input type="password" class="form-control" placeholder="Password">
+                                            <input type="password" class="form-control" name="password" placeholder="Password">
                                         </div>
                                         <div class="text-center">
-                                            <button type="submit" class="btn btn-primary btn-block">Sign Me In</button>
+                                            <button type="submit" class="btn btn-primary btn-block" name="submit">Sign Me In</button>
                                         </div>
                                     </form>
                                 </div>
@@ -71,5 +109,7 @@ $db_handle = new DBController();
     <script src="public/js/custom.min.js"></script>
     <script src="public/js/dlabnav-init.js"></script>
 	<script src="public/js/styleSwitcher.js"></script>
+    <script src="public/vendor/toastr/js/toastr.min.js" type="text/javascript"></script>
+    <script src="public/js/plugins-init/toastr-init.js" type="text/javascript"></script>
 </body>
 </html>

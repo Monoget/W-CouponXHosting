@@ -1,0 +1,7 @@
+RewriteEngine on
+
+RewriteRule ^Dashboard dashboard.php [NC,L]
+
+RewriteRule ^Login index.php [NC,L]
+
+RewriteRule ^Logout logout.php [NC,L]

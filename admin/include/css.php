@@ -12,3 +12,13 @@ if(!isset($_SESSION["userid"])){
 <link rel="stylesheet" href="public/vendor/nouislider/nouislider.min.css">
 <!-- Style css -->
 <link href="public/css/style.css" rel="stylesheet">
+<link href="public/vendor/toastr/css/toastr.min.css" rel="stylesheet" type="text/css"/>
+<style>
+    .toast-success {
+        background-color: #5fb46e;
+    }
+
+    .toast-error {
+        background-color: #b50000;
+    }
+</style>
