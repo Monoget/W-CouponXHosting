@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7cb97298-c149-4499-b18c-e621f7d8582d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/W-Sajib-Retail.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+    <list default="true" id="7cb97298-c149-4499-b18c-e621f7d8582d" name="Changes" comment="update">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/admin/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/include/css.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/include/css.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/include/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/include/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/include/js.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/include/js.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/include/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/include/navbar.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +23,11 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectId" id="2HisKeLKTDMzZ1qfMhEsDX3DIaP" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -32,6 +38,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\W-CouponXHosting\admin" />
+      <recent name="C:\xampp\htdocs\W-CouponXHosting\admin\include" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -41,10 +53,34 @@
       <option name="presentableId" value="Default" />
       <updated>1668779186462</updated>
       <workItem from="1668779190741" duration="134000" />
+      <workItem from="1668779343937" duration="5816000" />
     </task>
+    <task id="LOCAL-00001" summary="update">
+      <created>1668779396037</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1668779396037</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
 </project>

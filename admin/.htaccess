@@ -2,6 +2,48 @@ RewriteEngine on
 
 RewriteRule ^Dashboard dashboard.php [NC,L]
 
+RewriteRule ^Add-Category add-category.php [NC,L]
+
+RewriteRule ^Category category.php [NC,L]
+
+RewriteRule ^Add-Store add-store.php [NC,L]
+
+RewriteRule ^Store store.php [NC,L]
+
+RewriteRule ^Store-Rating store-rating.php [NC,L]
+
+RewriteRule ^Add-Trending-Deal add-trending-deal.php [NC,L]
+
+RewriteRule ^Trending-Deal trending-deal.php [NC,L]
+
+RewriteRule ^Add-Offer add-offer.php [NC,L]
+
+RewriteRule ^Offer offer.php [NC,L]
+
+RewriteRule ^Add-Store-Offer add-store-offer.php [NC,L]
+
+RewriteRule ^Store-Offer store-offer.php [NC,L]
+
+RewriteRule ^Add-Blog-Category add-blog-category.php [NC,L]
+
+RewriteRule ^Blog-Category blog-category.php [NC,L]
+
+RewriteRule ^Add-Blog add-blog.php [NC,L]
+
+RewriteRule ^Blog blog.php [NC,L]
+
+RewriteRule ^Newsletter newsletter.php [NC,L]
+
+RewriteRule ^Admin admin.php [NC,L]
+
+RewriteRule ^Insert insert.php [NC,L]
+
+RewriteRule ^Update update.php [NC,L]
+
+RewriteRule ^Delete delete.php [NC,L]
+
+RewriteRule ^Profile profile.php [NC,L]
+
 RewriteRule ^Login index.php [NC,L]
 
 RewriteRule ^Logout logout.php [NC,L]

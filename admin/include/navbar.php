@@ -13,7 +13,7 @@
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end">
-                    <a href="app-profile.html" class="dropdown-item ai-icon">
+                    <a href="Profile" class="dropdown-item ai-icon">
                         <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18"
                              height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                              stroke-linecap="round" stroke-linejoin="round">
@@ -35,7 +35,7 @@
                 </div>
             </li>
             <li>
-                <a class="ai-icon" href="index.html" aria-expanded="false">
+                <a class="ai-icon" href="Dashboard" aria-expanded="false">
                     <i class="flaticon-025-dashboard"></i>
                     <span class="nav-text">Dashboard</span>
                 </a>
@@ -46,8 +46,8 @@
                     <span class="nav-text">Category</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="chart-flot.html">Add Category</a></li>
-                    <li><a href="chart-morris.html">Category</a></li>
+                    <li><a href="Add-Category">Add Category</a></li>
+                    <li><a href="Category">Category</a></li>
                 </ul>
             </li>
             <li><a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
@@ -55,9 +55,9 @@
                     <span class="nav-text">Store</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="app-profile.html">Add Store</a></li>
-                    <li><a href="post-details.html">Store</a></li>
-                    <li><a href="post-details.html">Rating</a></li>
+                    <li><a href="Add-Store">Add Store</a></li>
+                    <li><a href="Store">Store</a></li>
+                    <li><a href="Store-Rating">Store Rating</a></li>
                 </ul>
             </li>
             <li>
@@ -66,8 +66,8 @@
                     <span class="nav-text">Trending Deal</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="ui-accordion.html">Add Trending Deal</a></li>
-                    <li><a href="ui-alert.html">Trending Deal</a></li>
+                    <li><a href="Add-Trending-Deal">Add Trending Deal</a></li>
+                    <li><a href="Trending-Deal">Trending Deal</a></li>
                 </ul>
             </li>
             <li><a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
@@ -75,8 +75,8 @@
                     <span class="nav-text">Offer</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="uc-select2.html">Add Offer</a></li>
-                    <li><a href="uc-nestable.html">Offer</a></li>
+                    <li><a href="Add-Offer">Add Offer</a></li>
+                    <li><a href="Offer">Offer</a></li>
                 </ul>
             </li>
             <li>
@@ -85,8 +85,8 @@
                     <span class="nav-text">Store Offer</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="uc-select2.html">Add Store Offer</a></li>
-                    <li><a href="uc-nestable.html">Store Offer</a></li>
+                    <li><a href="Add-Store-Offer">Add Store Offer</a></li>
+                    <li><a href="Store-Offer">Store Offer</a></li>
                 </ul>
             </li>
             <li><a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
@@ -94,8 +94,8 @@
                     <span class="nav-text">Blog Category</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="page-login.html">Add Blog Category</a></li>
-                    <li><a href="page-register.html">Blog Category</a></li>
+                    <li><a href="Add-Blog-Category">Add Blog Category</a></li>
+                    <li><a href="Blog-Category">Blog Category</a></li>
                 </ul>
             </li>
             <li><a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
@@ -103,8 +103,8 @@
                     <span class="nav-text">Blog</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="form-element.html">Add Blog</a></li>
-                    <li><a href="form-wizard.html">Blog</a></li>
+                    <li><a href="Add-Blog">Add Blog</a></li>
+                    <li><a href="Blog">Blog</a></li>
                 </ul>
             </li>
             <li><a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
@@ -112,8 +112,8 @@
                     <span class="nav-text">Others</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="table-bootstrap-basic.html">Newsletter</a></li>
-                    <li><a href="table-datatable-basic.html">Admin</a></li>
+                    <li><a href="Newsletter">Newsletter</a></li>
+                    <li><a href="Admin">Admin</a></li>
                 </ul>
             </li>
         </ul>
