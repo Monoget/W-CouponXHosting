@@ -5,86 +5,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="assets/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <?php require_once('include/css.php'); ?>
 
-    <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="assets/vendors/font-awesome/css/all.min.css"/>
-
-    <!-- Swiper CSS -->
-    <link rel='stylesheet' href='assets/vendors/swiper/css/swiper.min.css'>
-
-    <!-- Style CSS -->
-    <link rel='stylesheet' href='assets/css/style.css'>
-
-    <link rel="icon" type="image/x-icon" href="assets/images/logo/favicon.png">
     <title>Offer - CouponXHosting</title>
 </head>
 <body>
 <!-- NAV Start -->
-<header class="bg-dark">
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="index.html"><img src="assets/images/logo/logo-white.png" class="img-fluid" alt=""/></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" aria-current="page" href="savings.html">Savings</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown"
-                               aria-expanded="false">
-                                Store
-                            </a>
-                            <ul class="dropdown-menu multi-level">
-                                <li class="dropdown-submenu">
-                                    <a href="#" class="dropdown-item dropdown-toggle"
-                                       data-toggle="dropdown">Dropdown</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="stores.html" class="dropdown-item">Store</a></li>
-                                        <!--<li class="dropdown-submenu">
-                                            <a href="#" class="dropdown-item dropdown-toggle" data-toggle="dropdown">Dropdown</a>
-                                            <ul class="dropdown-menu">
-                                                <li class="dropdown-submenu">
-                                                    <a href="#" class="dropdown-item dropdown-toggle" data-toggle="dropdown">Dropdown</a>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a href="#" class="dropdown-item">Action</a></li>
-                                                        <li><a href="#" class="dropdown-item">Another action</a></li>
-                                                        <li><a href="#" class="dropdown-item">Something else here</a></li>
-                                                        <li class="divider"></li>
-                                                        <li><a href="#" class="dropdown-item">Separated link</a></li>
-                                                        <li class="divider"></li>
-                                                        <li><a href="#" class="dropdown-item">One more separated link</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>-->
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="offer.html">Offer</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="blog.html">Blog</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-light" type="submit">Search</button>
-                    </form>
-                </div>
-            </div>
-        </nav>
-    </div>
-</header>
+<?php require_once('include/menu.php'); ?>
 <!-- NAV End -->
 
 <!-- Savings Banner Start -->
@@ -439,86 +366,10 @@
 <!-- Newsletter End -->
 
 <!-- Footer Start -->
-<footer class="bg-light">
-    <hr/>
-    <div class="container pt-3 pb-3">
-        <div class="row">
-            <div class="col-lg-3 mt-3 d-flex  align-items-center">
-                <div>
-                    <img src="assets/images/logo/logo-black.png" class="img-fluid" alt=""/>
-                </div>
-            </div>
-            <div class="col-lg-2 mt-3">
-                <p><small><strong>Category</strong></small></p>
-                <p><small>Category</small></p>
-                <p><small>Category</small></p>
-            </div>
-            <div class="col-lg-2 mt-3">
-                <p><small><strong>Category</strong></small></p>
-                <p><small>Category</small></p>
-                <p><small>Category</small></p>
-            </div>
-            <div class="col-lg-2 mt-3">
-                <p><small><strong>Category</strong></small></p>
-                <p><small>Category</small></p>
-                <p><small>Category</small></p>
-            </div>
-            <div class="col-lg-2 mt-3">
-                <p><small><strong>Category</strong></small></p>
-                <p><small>Category</small></p>
-                <p><small>Category</small></p>
-            </div>
-        </div>
-        <div class="row mt-4">
-            <div class="col-lg-1">
-
-            </div>
-            <div class="col-lg-10">
-                <ul class="nav justify-content-center">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Active</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-                <p class="text-center">
-                    <small>
-                        CouponXHosting and RMN are registered trademarks of CouponXHosting, Inc. Third-party trademarks are
-                        the
-                        property of their respective third-party owners. Presence of a third-party trademark does not
-                        mean that
-                        CouponXHosting has any relationship with that third-party or that the third-party endorses
-                        CouponXHosting or
-                        its services.
-                    </small>
-                </p>
-            </div>
-            <div class="col-lg-1">
-
-            </div>
-        </div>
-    </div>
-</footer>
+<?php require_once('include/footer.php'); ?>
 <!-- Footer End -->
 
-<!-- Bootstrap JS -->
-<script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Swiper JS -->
-<script src="assets/vendors/swiper/js/swiper.min.js"></script>
-
-<!-- JQuery JS -->
-<script src="assets/vendors/jquery/jquery.min.js"></script>
-
-<!-- Main JS -->
-<script src="assets/js/main.js"></script>
+<?php require_once('include/js.php'); ?>
 
 </body>
 </html>

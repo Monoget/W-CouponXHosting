@@ -1,15 +1,20 @@
+<?php
+session_start();
+require_once("../include/dbcontroller.php");
+$db_handle = new DBController();
+?>
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 <head>
     <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="keywords" content="" />
-	<meta name="author" content="" />
-	<meta name="robots" content="" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Dompet : Payment Admin Template" />
-	<meta property="og:title" content="Dompet : Payment Admin Template" />
-	<meta property="og:description" content="Dompet : Payment Admin Template" />
+    <meta name="author" content="Monoget Saha"/>
+    <meta name="robots" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CouponXHosting"/>
+    <meta property="og:title" content="CouponXHosting"/>
+    <meta property="og:description" content="CouponXHosting"/>
 	<meta property="og:image" content="social-image.png" />
 	<meta name="format-detection" content="telephone=no">
 	

@@ -1,0 +1,14 @@
+<?php
+if(!isset($_SESSION["userid"])){
+    echo "<script>
+                window.location.href='Login';
+                </script>";
+}
+?>
+<!-- FAVICONS ICON -->
+<link rel="shortcut icon" type="image/png" href="public/images/favicon.png"/>
+
+<link href="public/vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+<link rel="stylesheet" href="public/vendor/nouislider/nouislider.min.css">
+<!-- Style css -->
+<link href="public/css/style.css" rel="stylesheet">
