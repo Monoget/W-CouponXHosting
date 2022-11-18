@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("../include/dbcontroller.php");
+require_once("../include/dbController.php");
 $db_handle = new DBController();
 ?>
 <!DOCTYPE html>

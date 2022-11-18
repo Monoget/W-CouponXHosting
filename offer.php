@@ -1,3 +1,7 @@
+<?php
+require_once("include/dbController.php");
+$db_handle = new DBController();
+?>
 <!doctype html>
 <html lang="en">
 <head>

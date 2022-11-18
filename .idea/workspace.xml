@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7cb97298-c149-4499-b18c-e621f7d8582d" name="Changes" comment="update">
+    <list default="true" id="7cb97298-c149-4499-b18c-e621f7d8582d" name="Changes" comment="update admin category">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/admin/.htaccess" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/include/css.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/include/css.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/include/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/include/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/add-category.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add-category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/category.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/dashboard.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/include/js.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/include/js.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/include/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/include/navbar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/insert.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/insert.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/update.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/update.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/dbcontroller.php" beforeDir="false" afterPath="$PROJECT_DIR$/include/dbController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/offer.php" beforeDir="false" afterPath="$PROJECT_DIR$/offer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/savings.php" beforeDir="false" afterPath="$PROJECT_DIR$/savings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stores.php" beforeDir="false" afterPath="$PROJECT_DIR$/stores.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +61,7 @@
       <option name="presentableId" value="Default" />
       <updated>1668779186462</updated>
       <workItem from="1668779190741" duration="134000" />
-      <workItem from="1668779343937" duration="5816000" />
+      <workItem from="1668779343937" duration="8878000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1668779396037</created>
@@ -62,7 +70,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668779396037</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update admin category">
+      <created>1668785925126</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668785925126</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -81,6 +96,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="update admin category" />
+    <option name="LAST_COMMIT_MESSAGE" value="update admin category" />
   </component>
 </project>
