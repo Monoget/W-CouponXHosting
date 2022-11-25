@@ -96,7 +96,7 @@ $db_handle = new DBController();
         <!-- row -->
         <div class="container-fluid">
             <div class="row invoice-card-row">
-                <?php if (isset($_GET['trendingDealId'])) { ?>
+                <?php if (isset($_GET['offerId'])) { ?>
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
@@ -106,9 +106,53 @@ $db_handle = new DBController();
                                 <div class="basic-form">
                                     <form method="post" action="Update">
 
-                                        <?php $data = $db_handle->runQuery("SELECT * FROM trending where id={$_GET['trendingDealId']}"); ?>
+                                        <?php $data = $db_handle->runQuery("SELECT * FROM offer where id={$_GET['offerId']}"); ?>
 
                                         <input type="hidden" value="<?php echo $data[0]["id"]; ?>" name="id" required>
+
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Category</label>
+                                            <div class="col-sm-9">
+                                                <select class="form-control wide" onchange="storeFetch(this.value);" id="cat_change" name="category_id" required>
+                                                    <option>Choose...</option>
+                                                    <?php
+                                                    $category_data = $db_handle->runQuery("SELECT * FROM category order by id desc");
+                                                    $row_count = $db_handle->numRows("SELECT * FROM category order by id desc");
+
+                                                    for ($i = 0; $i < $row_count; $i++) {
+                                                        ?>
+                                                        <option value="<?php echo $category_data[$i]["id"]; ?>" <?php
+                                                        if($category_data[$i]["id"]==$data[0]["category_id"])
+                                                            echo 'selected'
+                                                        ?>>
+                                                            <?php echo $category_data[$i]["c_name"]; ?>
+                                                        </option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Store</label>
+                                            <div class="col-sm-9">
+                                                <select class="form-control wide" name="store_id" id="store_id" required>
+                                                    <option>Choose...</option>
+                                                    <?php
+                                                    $store_data = $db_handle->runQuery("SELECT * FROM store where category_id='{$data[0]["category_id"]}'");
+                                                    $row_count = $db_handle->numRows("SELECT * FROM store where category_id='{$data[0]["category_id"]}'");
+
+                                                    for ($i = 0; $i < $row_count; $i++) {
+                                                        ?>
+                                                        <option value="<?php echo $store_data[$i]["id"]; ?>" <?php
+                                                        if($store_data[$i]["id"]==$data[0]["store_id"])
+                                                            echo 'selected'
+                                                        ?>>
+                                                            <?php echo $store_data[$i]["s_name"]; ?>
+                                                        </option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                        </div>
 
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Title</label>
@@ -116,16 +160,18 @@ $db_handle = new DBController();
                                                 <input type="text" class="form-control" name="title" placeholder="Title" value="<?php echo $data[0]["title"]; ?>" required>
                                             </div>
                                         </div>
+
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Subtitle</label>
                                             <div class="col-sm-9">
                                                 <input type="text" class="form-control" name="subtitle" placeholder="Subtitle" value="<?php echo $data[0]["subtitle"]; ?>" required>
                                             </div>
                                         </div>
+
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Link</label>
                                             <div class="col-sm-9">
-                                                <input type="url" class="form-control" name="t_link" placeholder="Link" value="<?php echo $data[0]["t_link"]; ?>" required>
+                                                <input type="url" class="form-control" name="o_link" placeholder="Link" value="<?php echo $data[0]["o_link"]; ?>" required>
                                             </div>
                                         </div>
 
@@ -156,9 +202,16 @@ $db_handle = new DBController();
                                         </div>
 
                                         <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Offer Text</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" name="offer_text" value="<?php echo $data[0]["offer_text"]; ?>" placeholder="Offer Text" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 row">
                                             <div class="col-sm-6 mx-auto">
                                                 <button type="submit" class="btn btn-primary w-25"
-                                                        name="updateTrendingDeal">Submit
+                                                        name="updateOffer">Submit
                                                 </button>
                                             </div>
                                         </div>
@@ -179,31 +232,47 @@ $db_handle = new DBController();
                                         <thead>
                                         <tr>
                                             <th>SL</th>
+                                            <th>Category</th>
+                                            <th>Store</th>
                                             <th>Title</th>
                                             <th>Subtitle</th>
                                             <th>Link</th>
                                             <th>Image</th>
+                                            <th>Offer Text</th>
                                             <th>Status</th>
                                             <th>Action</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <?php
-                                        $data = $db_handle->runQuery("SELECT * FROM trending order by id desc");
-                                        $row_count = $db_handle->numRows("SELECT * FROM trending order by id desc");
+                                        $data = $db_handle->runQuery("SELECT * FROM offer order by id desc");
+                                        $row_count = $db_handle->numRows("SELECT * FROM offer order by id desc");
 
                                         for ($i = 0; $i < $row_count; $i++) {
                                             ?>
                                             <tr>
                                                 <td><?php echo $i + 1; ?></td>
+                                                <td>
+                                                    <?php
+                                                    $category = $db_handle->runQuery("SELECT * FROM category WHERE id={$data[$i]['category_id']}");
+                                                    echo $category[0]["c_name"];
+                                                    ?>
+                                                </td>
+                                                <td>
+                                                    <?php
+                                                    $store = $db_handle->runQuery("SELECT * FROM store WHERE id={$data[$i]['store_id']}");
+                                                    echo $store[0]["s_name"];
+                                                    ?>
+                                                </td>
                                                 <td><?php echo $data[$i]["title"]; ?></td>
                                                 <td><?php echo $data[$i]["subtitle"]; ?></td>
-                                                <td> <a href="<?php echo $data[$i]["t_link"]; ?>">link</a></td>
+                                                <td><a href="<?php echo $data[$i]["o_link"]; ?>" target="_blank">link</a></td>
                                                 <td>
                                                     <a href="../<?php echo $data[$i]["image"]; ?>" target="_blank">
                                                         image
                                                     </a>
                                                 </td>
+                                                <td><?php echo $data[$i]["offer_text"]; ?></td>
                                                 <td>
                                                     <?php
                                                     if ($data[$i]["status"] == 0) {
@@ -236,9 +305,9 @@ $db_handle = new DBController();
                                                         </div>
                                                         <div class="dropdown-menu dropdown-menu-end">
                                                             <a class="dropdown-item"
-                                                               href="Trending-Deal?trendingDealId=<?php echo $data[$i]["id"]; ?>">Edit</a>
+                                                               href="Offer?offerId=<?php echo $data[$i]["id"]; ?>">Edit</a>
                                                             <a class="dropdown-item"
-                                                               onclick="trendingDealDelete(<?php echo $data[$i]["id"]; ?>);">Delete</a>
+                                                               onclick="offerDelete(<?php echo $data[$i]["id"]; ?>);">Delete</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -281,7 +350,7 @@ $db_handle = new DBController();
 <?php require_once('include/js.php'); ?>
 
 <script>
-    function trendingDealDelete(id) {
+    function offerDelete(id) {
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -305,15 +374,15 @@ $db_handle = new DBController();
                                 'Your have Trending-Deal.',
                                 'error'
                             ).then((result) => {
-                                window.location = 'Trending-Deal';
+                                window.location = 'Offer';
                             });
                         } else {
                             Swal.fire(
                                 'Deleted!',
-                                'Trending-Deal has been deleted.',
+                                'Offer has been deleted.',
                                 'success'
                             ).then((result) => {
-                                window.location = 'Trending-Deal';
+                                window.location = 'Offer';
                             });
                         }
                     }
@@ -321,10 +390,10 @@ $db_handle = new DBController();
             } else {
                 Swal.fire(
                     'Cancelled!',
-                    'Trending-Deal is safe :)',
+                    'Offer is safe :)',
                     'error'
                 ).then((result) => {
-                    window.location = 'Trending-Deal';
+                    window.location = 'Offer';
                 });
             }
         })

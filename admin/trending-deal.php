@@ -198,7 +198,7 @@ $db_handle = new DBController();
                                                 <td><?php echo $i + 1; ?></td>
                                                 <td><?php echo $data[$i]["title"]; ?></td>
                                                 <td><?php echo $data[$i]["subtitle"]; ?></td>
-                                                <td> <a href="<?php echo $data[$i]["t_link"]; ?>">link</a></td>
+                                                <td><a href="<?php echo $data[$i]["t_link"]; ?>" target="_blank">link</a></td>
                                                 <td>
                                                     <a href="../<?php echo $data[$i]["image"]; ?>" target="_blank">
                                                         image
