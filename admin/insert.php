@@ -109,3 +109,48 @@ if (isset($_POST["addTrendingDeal"])) {
                 window.location.href='Add-Trending-Deal';
                 </script>";
 }
+
+if (isset($_POST["addOffer"])) {
+
+    $category_id = $db_handle->checkValue($_POST['category_id']);
+
+    $store_id = $db_handle->checkValue($_POST['store_id']);
+
+    $title = $db_handle->checkValue($_POST['title']);
+
+    $subtitle = $db_handle->checkValue($_POST['subtitle']);
+
+    $o_link = $db_handle->checkValue($_POST['o_link']);
+
+    $offer_text = $db_handle->checkValue($_POST['offer_text']);
+
+    $image='';
+
+    if (!empty($_FILES['image']['name'])){
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber."_" . $_FILES['image']['name'];
+        $file_size = $_FILES['image']['size'];
+        $file_tmp = $_FILES['image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if (
+            $file_type != "jpg" && $file_type != "png" && $file_type != "jpeg"
+            && $file_type != "gif"
+        ) {
+            $attach_files = '';
+        } else {
+            move_uploaded_file($file_tmp, "../assets/images/trendingdeal/" .$file_name);
+            $image = "assets/images/trendingdeal/" . $file_name;
+        }
+    }
+
+    $inserted_at = date("Y-m-d H:i:s");
+
+
+    $insert = $db_handle->insertQuery("INSERT INTO `offer`(`store_id`, `category_id`, `title`, `subtitle`, `image`, `o_link`, `offer_text`, `inserted_at`) VALUES('$store_id','$category_id','$title','$subtitle','$image','$o_link','$offer_text','$inserted_at')");
+
+    echo "<script>
+                document.cookie = 'alert = 3;';
+                window.location.href='Add-Offer';
+                </script>";
+}

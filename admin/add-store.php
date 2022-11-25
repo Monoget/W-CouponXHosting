@@ -107,7 +107,7 @@ $db_handle = new DBController();
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Category</label>
                                         <div class="col-sm-9">
-                                            <select class="default-select form-control wide" name="category_id" required>
+                                            <select class="form-control wide" name="category_id" required>
                                                 <option>Choose...</option>
                                                 <?php
                                                 $category_data = $db_handle->runQuery("SELECT * FROM category order by id desc");

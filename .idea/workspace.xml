@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7cb97298-c149-4499-b18c-e621f7d8582d" name="Changes" comment="trending deal done">
+    <list default="true" id="7cb97298-c149-4499-b18c-e621f7d8582d" name="Changes" comment="update offer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/add-trending-deal.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add-trending-deal.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/category.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/trending-deal.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/trending-deal.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/admin/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/add-offer.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add-offer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/add-store.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add-store.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/insert.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/insert.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/store.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/store.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +62,7 @@
       <workItem from="1668798054811" duration="3106000" />
       <workItem from="1669352584542" duration="4842000" />
       <workItem from="1669376181639" duration="2683000" />
-      <workItem from="1669390437908" duration="6234000" />
+      <workItem from="1669390437908" duration="7052000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1668779396037</created>
@@ -125,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669394084240</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="update offer">
+      <created>1669397599338</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1669397599338</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +157,7 @@
     <MESSAGE value="update admin store" />
     <MESSAGE value="store menu done" />
     <MESSAGE value="trending deal done" />
-    <option name="LAST_COMMIT_MESSAGE" value="trending deal done" />
+    <MESSAGE value="update offer" />
+    <option name="LAST_COMMIT_MESSAGE" value="update offer" />
   </component>
 </project>

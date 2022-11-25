@@ -107,7 +107,7 @@ $db_handle = new DBController();
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Category</label>
                                         <div class="col-sm-9">
-                                            <select class="default-select form-control wide" onchange="storeFetch(this.value);" id="cat_change" name="category_id" required>
+                                            <select class="form-control wide" onchange="storeFetch(this.value);" id="cat_change" name="category_id" required>
                                                 <option>Choose...</option>
                                                 <?php
                                                 $category_data = $db_handle->runQuery("SELECT * FROM category order by id desc");
@@ -125,7 +125,7 @@ $db_handle = new DBController();
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Store</label>
                                         <div class="col-sm-9">
-                                            <select class="default-select form-control wide" name="store_id" id="store_list" required>
+                                            <select class="form-control wide" name="store_id" id="store_id" required>
                                                 <option>Choose...</option>
                                             </select>
                                         </div>
@@ -164,7 +164,7 @@ $db_handle = new DBController();
                                     </div>
                                     <div class="mb-3 row">
                                         <div class="col-sm-6 mx-auto">
-                                            <button type="submit" class="btn btn-primary w-25" name="addTrendingDeal">Submit</button>
+                                            <button type="submit" class="btn btn-primary w-25" name="addOffer">Submit</button>
                                         </div>
                                     </div>
                                 </form>
@@ -203,12 +203,12 @@ $db_handle = new DBController();
         function storeFetch(value){
             $.ajax({
                 type: 'get',
-                url: 'getStore.php',
+                url: 'Get-Store',
                 data: {
                     category_id: value
                 },
                 success: function(data) {
-                    $('#store_list').html(data);
+                    $('#store_id').html(data);
                     console.log(data);
                 }
             });
