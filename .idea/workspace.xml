@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7cb97298-c149-4499-b18c-e621f7d8582d" name="Changes" comment="add offer done">
+    <list default="true" id="7cb97298-c149-4499-b18c-e621f7d8582d" name="Changes" comment="offer done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/delete.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/offer.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/offer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/trending-deal.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/trending-deal.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/update.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/update.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +60,7 @@
       <workItem from="1668798054811" duration="3106000" />
       <workItem from="1669352584542" duration="4842000" />
       <workItem from="1669376181639" duration="2683000" />
-      <workItem from="1669390437908" duration="9432000" />
+      <workItem from="1669390437908" duration="9628000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1668779396037</created>
@@ -139,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669398387394</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="offer done">
+      <created>1669407584905</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1669407584905</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,6 +171,7 @@
     <MESSAGE value="trending deal done" />
     <MESSAGE value="update offer" />
     <MESSAGE value="add offer done" />
-    <option name="LAST_COMMIT_MESSAGE" value="add offer done" />
+    <MESSAGE value="offer done" />
+    <option name="LAST_COMMIT_MESSAGE" value="offer done" />
   </component>
 </project>

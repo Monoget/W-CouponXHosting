@@ -365,13 +365,13 @@ $db_handle = new DBController();
                     type: 'get',
                     url: 'Delete',
                     data: {
-                        trendingDealId: id
+                        offerId: id
                     },
                     success: function (data) {
                         if (data.toString() === 'P') {
                             Swal.fire(
                                 'Not Deleted!',
-                                'Your have Trending-Deal.',
+                                'Your have Offer.',
                                 'error'
                             ).then((result) => {
                                 window.location = 'Offer';

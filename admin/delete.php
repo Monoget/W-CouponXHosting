@@ -51,3 +51,11 @@ if (isset($_GET['trendingDealId'])) {
     echo 'success';
 }
 
+if (isset($_GET['offerId'])) {
+    $data = $db_handle->runQuery("select * FROM `offer` WHERE id='{$_GET['offerId']}'");
+    unlink('../'.$data[0]['image']);
+
+    $db_handle->insertQuery("delete from offer where id=" . $_GET['offerId'] . "");
+    echo 'success';
+}
+

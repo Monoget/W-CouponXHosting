@@ -157,11 +157,11 @@ if (isset($_POST['updateOffer'])) {
             $attach_files = '';
         } else {
 
-            $data = $db_handle->runQuery("select * FROM `trending` WHERE id='{$id}'");
+            $data = $db_handle->runQuery("select * FROM `offer` WHERE id='{$id}'");
             unlink('../'.$data[0]['image']);
 
-            move_uploaded_file($file_tmp, "../assets/images/trendingdeal/" .$file_name);
-            $image = "assets/images/trendingdeal/" . $file_name;
+            move_uploaded_file($file_tmp, "../assets/images/offer/" .$file_name);
+            $image = "assets/images/offer/" . $file_name;
             $query.=",`image`=".$image;
         }
     }
