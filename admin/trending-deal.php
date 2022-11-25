@@ -125,7 +125,7 @@ $db_handle = new DBController();
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Link</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control" name="t_link" placeholder="Link" value="<?php echo $data[0]["t_link"]; ?>" required>
+                                                <input type="url" class="form-control" name="t_link" placeholder="Link" value="<?php echo $data[0]["t_link"]; ?>" required>
                                             </div>
                                         </div>
 

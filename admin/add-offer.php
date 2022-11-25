@@ -20,7 +20,7 @@ $db_handle = new DBController();
     <meta name="format-detection" content="telephone=no">
 
     <!-- PAGE TITLE HERE -->
-    <title>Add Trending Deal | CouponXHosting</title>
+    <title>Add Offer | CouponXHosting</title>
 
     <?php require_once('include/css.php'); ?>
 
@@ -70,7 +70,7 @@ $db_handle = new DBController();
                 <div class="collapse navbar-collapse justify-content-between">
                     <div class="header-left">
                         <div class="dashboard_bar">
-                            Add Trending Deal
+                            Add Offer
                         </div>
                     </div>
                 </div>
@@ -99,11 +99,37 @@ $db_handle = new DBController();
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Add Trending Deal</h4>
+                            <h4 class="card-title">Add Offer</h4>
                         </div>
                         <div class="card-body">
                             <div class="basic-form">
                                 <form action="Insert" method="post" enctype="multipart/form-data">
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label">Category</label>
+                                        <div class="col-sm-9">
+                                            <select class="default-select form-control wide" onchange="storeFetch(this.value);" id="cat_change" name="category_id" required>
+                                                <option>Choose...</option>
+                                                <?php
+                                                $category_data = $db_handle->runQuery("SELECT * FROM category order by id desc");
+                                                $row_count = $db_handle->numRows("SELECT * FROM category order by id desc");
+
+                                                for ($i = 0; $i < $row_count; $i++) {
+                                                    ?>
+                                                    <option value="<?php echo $category_data[$i]["id"]; ?>">
+                                                        <?php echo $category_data[$i]["c_name"]; ?>
+                                                    </option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label">Store</label>
+                                        <div class="col-sm-9">
+                                            <select class="default-select form-control wide" name="store_id" id="store_list" required>
+                                                <option>Choose...</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Title</label>
                                         <div class="col-sm-9">
@@ -119,7 +145,7 @@ $db_handle = new DBController();
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Link</label>
                                         <div class="col-sm-9">
-                                            <input type="url" class="form-control" name="t_link" placeholder="Link" required>
+                                            <input type="url" class="form-control" name="o_link" placeholder="Link" required>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
@@ -128,6 +154,12 @@ $db_handle = new DBController();
                                             <div class="form-file">
                                                 <input type="file" class="form-file-input" name="image" required/>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label">Offer Text</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="offer_text" placeholder="Offer Text" required>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
@@ -167,5 +199,20 @@ $db_handle = new DBController();
 ***********************************-->
 <?php require_once('include/js.php'); ?>
 
+<script>
+        function storeFetch(value){
+            $.ajax({
+                type: 'get',
+                url: 'getStore.php',
+                data: {
+                    category_id: value
+                },
+                success: function(data) {
+                    $('#store_list').html(data);
+                    console.log(data);
+                }
+            });
+        }
+</script>
 </body>
 </html>

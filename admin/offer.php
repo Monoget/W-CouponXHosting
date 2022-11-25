@@ -20,7 +20,7 @@ $db_handle = new DBController();
     <meta name="format-detection" content="telephone=no">
 
     <!-- PAGE TITLE HERE -->
-    <title>Category | CouponXHosting</title>
+    <title>Offer | CouponXHosting</title>
 
     <?php require_once('include/css.php'); ?>
 
@@ -70,7 +70,7 @@ $db_handle = new DBController();
                 <div class="collapse navbar-collapse justify-content-between">
                     <div class="header-left">
                         <div class="dashboard_bar">
-                            Category
+                            Offer
                         </div>
                     </div>
                 </div>
@@ -96,28 +96,51 @@ $db_handle = new DBController();
         <!-- row -->
         <div class="container-fluid">
             <div class="row invoice-card-row">
-                <?php if (isset($_GET['catId'])) { ?>
+                <?php if (isset($_GET['trendingDealId'])) { ?>
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Update Category</h4>
+                                <h4 class="card-title">Update Offer</h4>
                             </div>
                             <div class="card-body">
                                 <div class="basic-form">
                                     <form method="post" action="Update">
 
-                                        <?php $data = $db_handle->runQuery("SELECT * FROM category where id={$_GET['catId']}"); ?>
+                                        <?php $data = $db_handle->runQuery("SELECT * FROM trending where id={$_GET['trendingDealId']}"); ?>
 
                                         <input type="hidden" value="<?php echo $data[0]["id"]; ?>" name="id" required>
 
                                         <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">Category Name</label>
+                                            <label class="col-sm-3 col-form-label">Title</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control" name="c_name"
-                                                       placeholder="Category Name"
-                                                       value="<?php echo $data[0]["c_name"]; ?>" required>
+                                                <input type="text" class="form-control" name="title" placeholder="Title" value="<?php echo $data[0]["title"]; ?>" required>
                                             </div>
                                         </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Subtitle</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" name="subtitle" placeholder="Subtitle" value="<?php echo $data[0]["subtitle"]; ?>" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Link</label>
+                                            <div class="col-sm-9">
+                                                <input type="url" class="form-control" name="t_link" placeholder="Link" value="<?php echo $data[0]["t_link"]; ?>" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Image</label>
+                                            <div class="col-sm-6">
+                                                <div class="form-file">
+                                                    <input type="file" class="form-file-input" name="image"/>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <img src="../<?php echo $data[0]["image"]; ?>" class="img-fluid" alt=""/>
+                                            </div>
+                                        </div>
+
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Status</label>
                                             <div class="col-sm-9">
@@ -131,10 +154,11 @@ $db_handle = new DBController();
                                                 </select>
                                             </div>
                                         </div>
+
                                         <div class="mb-3 row">
                                             <div class="col-sm-6 mx-auto">
                                                 <button type="submit" class="btn btn-primary w-25"
-                                                        name="updateCategory">Submit
+                                                        name="updateTrendingDeal">Submit
                                                 </button>
                                             </div>
                                         </div>
@@ -147,7 +171,7 @@ $db_handle = new DBController();
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Category</h4>
+                                <h4 class="card-title">Offer</h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -155,39 +179,42 @@ $db_handle = new DBController();
                                         <thead>
                                         <tr>
                                             <th>SL</th>
-                                            <th>Category Name</th>
+                                            <th>Title</th>
+                                            <th>Subtitle</th>
+                                            <th>Link</th>
+                                            <th>Image</th>
                                             <th>Status</th>
-                                            <th>Store</th>
                                             <th>Action</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <?php
-                                        $category_data = $db_handle->runQuery("SELECT * FROM category order by id desc");
-                                        $row_count = $db_handle->numRows("SELECT * FROM category order by id desc");
+                                        $data = $db_handle->runQuery("SELECT * FROM trending order by id desc");
+                                        $row_count = $db_handle->numRows("SELECT * FROM trending order by id desc");
 
                                         for ($i = 0; $i < $row_count; $i++) {
                                             ?>
                                             <tr>
                                                 <td><?php echo $i + 1; ?></td>
-                                                <td><?php echo $category_data[$i]["c_name"]; ?></td>
+                                                <td><?php echo $data[$i]["title"]; ?></td>
+                                                <td><?php echo $data[$i]["subtitle"]; ?></td>
+                                                <td> <a href="<?php echo $data[$i]["t_link"]; ?>">link</a></td>
+                                                <td>
+                                                    <a href="../<?php echo $data[$i]["image"]; ?>" target="_blank">
+                                                        image
+                                                    </a>
+                                                </td>
                                                 <td>
                                                     <?php
-                                                    if ($category_data[$i]["status"] == 0) {
+                                                    if ($data[$i]["status"] == 0) {
                                                         ?>
                                                         <span class="badge light badge-danger">Hide</span>
                                                         <?php
-                                                    } else if ($category_data[$i]["status"] == 1) {
+                                                    } else if ($data[$i]["status"] == 1) {
                                                         ?>
                                                         <span class="badge light badge-success">Show</span>
                                                         <?php
                                                     }
-                                                    ?>
-                                                </td>
-                                                <td>
-                                                    <?php
-                                                    $row = $db_handle->numRows("SELECT * FROM store WHERE category_id='{$category_data[$i]['id']}'");
-                                                    echo $row;
                                                     ?>
                                                 </td>
                                                 <td>
@@ -209,9 +236,9 @@ $db_handle = new DBController();
                                                         </div>
                                                         <div class="dropdown-menu dropdown-menu-end">
                                                             <a class="dropdown-item"
-                                                               href="Category?catId=<?php echo $category_data[$i]["id"]; ?>">Edit</a>
+                                                               href="Trending-Deal?trendingDealId=<?php echo $data[$i]["id"]; ?>">Edit</a>
                                                             <a class="dropdown-item"
-                                                               onclick="categoryDelete(<?php echo $category_data[$i]["id"]; ?>);">Delete</a>
+                                                               onclick="trendingDealDelete(<?php echo $data[$i]["id"]; ?>);">Delete</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -254,7 +281,7 @@ $db_handle = new DBController();
 <?php require_once('include/js.php'); ?>
 
 <script>
-    function categoryDelete(id) {
+    function trendingDealDelete(id) {
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -269,24 +296,24 @@ $db_handle = new DBController();
                     type: 'get',
                     url: 'Delete',
                     data: {
-                        catId: id
+                        trendingDealId: id
                     },
                     success: function (data) {
                         if (data.toString() === 'P') {
                             Swal.fire(
                                 'Not Deleted!',
-                                'Your have store in this category.',
+                                'Your have Trending-Deal.',
                                 'error'
                             ).then((result) => {
-                                window.location = 'Category';
+                                window.location = 'Trending-Deal';
                             });
                         } else {
                             Swal.fire(
                                 'Deleted!',
-                                'Your file has been deleted.',
+                                'Trending-Deal has been deleted.',
                                 'success'
                             ).then((result) => {
-                                window.location = 'Category';
+                                window.location = 'Trending-Deal';
                             });
                         }
                     }
@@ -294,10 +321,10 @@ $db_handle = new DBController();
             } else {
                 Swal.fire(
                     'Cancelled!',
-                    'Your Category is safe :)',
+                    'Trending-Deal is safe :)',
                     'error'
                 ).then((result) => {
-                    window.location = 'Category';
+                    window.location = 'Trending-Deal';
                 });
             }
         })
