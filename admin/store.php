@@ -96,7 +96,7 @@ $db_handle = new DBController();
         <!-- row -->
         <div class="container-fluid">
             <div class="row invoice-card-row">
-                <?php if (isset($_GET['catId'])) { ?>
+                <?php if (isset($_GET['storeId'])) { ?>
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
@@ -106,7 +106,7 @@ $db_handle = new DBController();
                                 <div class="basic-form">
                                     <form method="post" action="Update">
 
-                                        <?php $data = $db_handle->runQuery("SELECT * FROM store where id={$_GET['catId']}"); ?>
+                                        <?php $data = $db_handle->runQuery("SELECT * FROM store where id={$_GET['storeId']}"); ?>
 
                                         <input type="hidden" value="<?php echo $data[0]["id"]; ?>" name="id" required>
 
@@ -244,13 +244,18 @@ $db_handle = new DBController();
                                                 <td><?php echo $i + 1; ?></td>
                                                 <td>
                                                     <?php
-                                                    $category = $db_handle->numRows("SELECT * FROM category WHERE id='{$data[$i]['category_id']}'");
+                                                    $category = $db_handle->runQuery("SELECT * FROM category WHERE id={$data[$i]['category_id']}");
                                                     echo $category[0]["c_name"];
                                                     ?>
                                                 </td>
                                                 <td><?php echo $data[$i]["s_name"]; ?></td>
                                                 <td><?php echo $data[$i]["s_domain"]; ?></td>
                                                 <td><?php echo $data[$i]["meta_title"]; ?></td>
+                                                <td>
+                                                    <a href="../<?php echo $data[$i]["image"]; ?>" target="_blank">
+                                                        image
+                                                    </a>
+                                                </td>
                                                 <td>
                                                     <?php
                                                     $row = $db_handle->numRows("SELECT * FROM offer WHERE store_id='{$data[$i]['id']}'");
@@ -260,11 +265,6 @@ $db_handle = new DBController();
                                                     $row = $db_handle->numRows("SELECT * FROM store_offer WHERE store_id='{$data[$i]['id']}'");
                                                     echo $row;
                                                     ?>
-                                                </td>
-                                                <td>
-                                                    <a href="../<?php echo $data[$i]["image"]; ?>" target="_blank">
-                                                        image
-                                                    </a>
                                                 </td>
                                                 <td>
                                                     <?php

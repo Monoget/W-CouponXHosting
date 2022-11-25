@@ -58,6 +58,10 @@ if (isset($_POST['updateStore'])) {
         ) {
             $attach_files = '';
         } else {
+
+            $data = $db_handle->runQuery("select * FROM `store` WHERE id='{$id}'");
+            unlink('../'.$data[0]['image']);
+
             move_uploaded_file($file_tmp, "../assets/images/store/" .$file_name);
             $image = "assets/images/store/" . $file_name;
             $query.=",`image`=".$image;
