@@ -57,7 +57,7 @@
                 <ul aria-expanded="false">
                     <li><a href="Add-Store">Add Store</a></li>
                     <li><a href="Store">Store</a></li>
-                    <li><a href="Store-Rating">Store Rating</a></li>
+                    <li><a href="Rating-Store">Store Rating</a></li>
                 </ul>
             </li>
             <li>

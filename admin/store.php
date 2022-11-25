@@ -202,7 +202,7 @@ $db_handle = new DBController();
                                         <div class="mb-3 row">
                                             <div class="col-sm-6 mx-auto">
                                                 <button type="submit" class="btn btn-primary w-25"
-                                                        name="updateCategory">Submit
+                                                        name="updateStore">Submit
                                                 </button>
                                             </div>
                                         </div>
@@ -244,8 +244,8 @@ $db_handle = new DBController();
                                                 <td><?php echo $i + 1; ?></td>
                                                 <td>
                                                     <?php
-                                                        $category = $db_handle->numRows("SELECT * FROM category WHERE id='{$data[$i]['category_id']}'");
-                                                        echo $category[0]["c_name"];
+                                                    $category = $db_handle->numRows("SELECT * FROM category WHERE id='{$data[$i]['category_id']}'");
+                                                    echo $category[0]["c_name"];
                                                     ?>
                                                 </td>
                                                 <td><?php echo $data[$i]["s_name"]; ?></td>
