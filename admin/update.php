@@ -78,3 +78,49 @@ if (isset($_POST['updateStore'])) {
                 </script>";
 
 }
+
+if (isset($_POST['updateTrendingDeal'])) {
+    $id = $db_handle->checkValue($_POST['id']);
+
+    $title = $db_handle->checkValue($_POST['title']);
+
+    $subtitle = $db_handle->checkValue($_POST['subtitle']);
+
+    $t_link = $db_handle->checkValue($_POST['t_link']);
+
+    $image='';
+    $query='';
+
+    if (!empty($_FILES['image']['name'])){
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber."_" . $_FILES['image']['name'];
+        $file_size = $_FILES['image']['size'];
+        $file_tmp = $_FILES['image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if (
+            $file_type != "jpg" && $file_type != "png" && $file_type != "jpeg"
+            && $file_type != "gif"
+        ) {
+            $attach_files = '';
+        } else {
+
+            $data = $db_handle->runQuery("select * FROM `trending` WHERE id='{$id}'");
+            unlink('../'.$data[0]['image']);
+
+            move_uploaded_file($file_tmp, "../assets/images/trendingdeal/" .$file_name);
+            $image = "assets/images/trendingdeal/" . $file_name;
+            $query.=",`image`=".$image;
+        }
+    }
+
+    $status = $db_handle->checkValue($_POST['status']);
+
+    $update = $db_handle->insertQuery("UPDATE `trending` SET `title`='$title',`t_link`='$t_link',`subtitle`='$subtitle'".$query.",`status`='$status' WHERE `id`='{$id}'");
+
+    echo "<script>
+                document.cookie = 'alert = 3;';
+                window.location.href='Trending-Deal';
+                </script>";
+
+}

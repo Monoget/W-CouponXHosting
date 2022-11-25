@@ -43,3 +43,11 @@ if (isset($_GET['ratingId'])) {
     echo 'success';
 }
 
+if (isset($_GET['trendingDealId'])) {
+    $data = $db_handle->runQuery("select * FROM `trending` WHERE id='{$_GET['trendingDealId']}'");
+    unlink('../'.$data[0]['image']);
+
+    $db_handle->insertQuery("delete from trending where id=" . $_GET['trendingDealId'] . "");
+    echo 'success';
+}
+
