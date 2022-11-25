@@ -10,6 +10,27 @@ if(!isset($_SESSION["userid"])){
 }
 
 if (isset($_GET['catId'])) {
-    $db_handle->insertQuery("delete from category where id=" . $_GET['catId'] . "");
-    echo 'success';
+    $row=$db_handle->numRows("select * FROM `store` WHERE category_id='{$_GET['catId']}'");
+
+    if ($row == 0) {
+        $db_handle->insertQuery("delete from category where id=" . $_GET['catId'] . "");
+        echo 'success';
+    } else {
+        echo 'P';
+    }
+}
+
+if (isset($_GET['storeId'])) {
+    $row=$db_handle->numRows("select * FROM `offer` WHERE store_id='{$_GET['storeId']}'");
+
+    $row+=$db_handle->numRows("select * FROM `rating` WHERE store_id='{$_GET['storeId']}'");
+
+    $row+=$db_handle->numRows("select * FROM `store_offer` WHERE store_id='{$_GET['storeId']}'");
+
+    if ($row == 0) {
+        $db_handle->insertQuery("delete from category where id=" . $_GET['storeId'] . "");
+        echo 'success';
+    } else {
+        echo 'P';
+    }
 }

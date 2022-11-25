@@ -115,8 +115,8 @@ $db_handle = new DBController();
 
                                                 for ($i = 0; $i < $row_count; $i++) {
                                                 ?>
-                                                <option value="<?php echo $category_data[0]["id"]; ?>">
-                                                    <?php echo $category_data[0]["c_name"]; ?>
+                                                <option value="<?php echo $category_data[$i]["id"]; ?>">
+                                                    <?php echo $category_data[$i]["c_name"]; ?>
                                                 </option>
                                                 <?php } ?>
                                             </select>

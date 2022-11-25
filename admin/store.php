@@ -111,11 +111,77 @@ $db_handle = new DBController();
                                         <input type="hidden" value="<?php echo $data[0]["id"]; ?>" name="id" required>
 
                                         <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">Category Name</label>
+                                            <label class="col-sm-3 col-form-label">Category</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control" name="c_name"
-                                                       placeholder="Category Name"
-                                                       value="<?php echo $data[0]["c_name"]; ?>" required>
+                                                <select class="default-select form-control wide" name="category_id" required>
+                                                    <option>Choose...</option>
+                                                    <?php
+                                                    $category_data = $db_handle->runQuery("SELECT * FROM category order by id desc");
+                                                    $row_count = $db_handle->numRows("SELECT * FROM category order by id desc");
+
+                                                    for ($i = 0; $i < $row_count; $i++) {
+                                                        ?>
+                                                        <option value="<?php echo $category_data[$i]["id"]; ?>" <?php
+                                                        if($category_data[$i]["id"]==$data[0]["category_id"])
+                                                            echo 'selected'
+                                                        ?>>
+                                                            <?php echo $category_data[$i]["c_name"]; ?>
+                                                        </option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Store Name</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" name="s_name" placeholder="Store Name" value="<?php echo $data[0]["s_name"]; ?>" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Domain</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" name="s_domain" placeholder="domain.com" value="<?php echo $data[0]["s_domain"]; ?>" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Meta Title</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" name="meta_title" placeholder="Meta Title" value="<?php echo $data[0]["meta_title"]; ?>" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Meta Description</label>
+                                            <div class="col-sm-9">
+                                                <textarea class="form-control" name="meta_description" style="height: 100px" placeholder="Type your meta description..." required><?php echo $data[0]["meta_description"]; ?></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Meta Keyword</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" name="meta_keyword" placeholder="Meta Keyword" value="<?php echo $data[0]["meta_keyword"]; ?>" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Image</label>
+                                            <div class="col-sm-6">
+                                                <div class="form-file">
+                                                    <input type="file" class="form-file-input" name="image"/>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <img src="../<?php echo $data[0]["image"]; ?>" class="img-fluid" alt=""/>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">About</label>
+                                            <div class="col-sm-9">
+                                                <textarea class="form-control" name="about" style="height: 100px" placeholder="Type your about..." required><?php echo $data[0]["about"]; ?></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Annual</label>
+                                            <div class="col-sm-9">
+                                                <textarea class="form-control" name="annual" style="height: 100px" placeholder="Type your annual..." required><?php echo $data[0]["annual"]; ?></textarea>
                                             </div>
                                         </div>
 
@@ -162,6 +228,7 @@ $db_handle = new DBController();
                                             <th>Domain</th>
                                             <th>Meta Title</th>
                                             <th>Image</th>
+                                            <th>Offer+Rating+Store Offer</th>
                                             <th>Status</th>
                                             <th>Action</th>
                                         </tr>
@@ -175,7 +242,30 @@ $db_handle = new DBController();
                                             ?>
                                             <tr>
                                                 <td><?php echo $i + 1; ?></td>
-                                                <td><?php echo $data[$i]["c_name"]; ?></td>
+                                                <td>
+                                                    <?php
+                                                        $category = $db_handle->numRows("SELECT * FROM category WHERE id='{$data[$i]['category_id']}'");
+                                                        echo $category[0]["c_name"];
+                                                    ?>
+                                                </td>
+                                                <td><?php echo $data[$i]["s_name"]; ?></td>
+                                                <td><?php echo $data[$i]["s_domain"]; ?></td>
+                                                <td><?php echo $data[$i]["meta_title"]; ?></td>
+                                                <td>
+                                                    <?php
+                                                    $row = $db_handle->numRows("SELECT * FROM offer WHERE store_id='{$data[$i]['id']}'");
+                                                    echo $row.'+';
+                                                    $row = $db_handle->numRows("SELECT * FROM rating WHERE store_id='{$data[$i]['id']}'");
+                                                    echo $row.'+';
+                                                    $row = $db_handle->numRows("SELECT * FROM store_offer WHERE store_id='{$data[$i]['id']}'");
+                                                    echo $row;
+                                                    ?>
+                                                </td>
+                                                <td>
+                                                    <a href="../<?php echo $data[$i]["image"]; ?>" target="_blank">
+                                                        image
+                                                    </a>
+                                                </td>
                                                 <td>
                                                     <?php
                                                     if ($data[$i]["status"] == 0) {
