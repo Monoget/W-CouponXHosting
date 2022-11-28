@@ -200,13 +200,6 @@ $db_handle = new DBController();
                                         </div>
 
                                         <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">Offer Text</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control" name="offer_text" value="<?php echo $data[0]["offer_text"]; ?>" placeholder="Offer Text" required>
-                                            </div>
-                                        </div>
-
-                                        <div class="mb-3 row">
                                             <div class="col-sm-6 mx-auto">
                                                 <button type="submit" class="btn btn-primary w-25"
                                                         name="updateStoreOffer">Submit
