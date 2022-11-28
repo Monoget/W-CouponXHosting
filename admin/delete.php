@@ -83,3 +83,8 @@ if (isset($_GET['blogId'])) {
     echo 'success';
 }
 
+if (isset($_GET['newsletterId'])) {
+    $db_handle->insertQuery("delete from newsletter where id=" . $_GET['newsletterId'] . "");
+    echo 'success';
+}
+

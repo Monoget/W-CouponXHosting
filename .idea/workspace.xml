@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cb97298-c149-4499-b18c-e621f7d8582d" name="Changes" comment="Blog  Done">
-      <change beforePath="$PROJECT_DIR$/admin/insert.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/insert.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/delete.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +62,7 @@
       <workItem from="1669474870084" duration="2351000" />
       <workItem from="1669491308755" duration="2123000" />
       <workItem from="1669569650978" duration="77000" />
-      <workItem from="1669646724311" duration="4013000" />
+      <workItem from="1669646724311" duration="4440000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1668779396037</created>
@@ -182,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669650680971</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Blog  Done">
+      <created>1669650791795</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1669650791795</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
