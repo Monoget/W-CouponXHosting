@@ -60,7 +60,7 @@ if (isset($_GET['offerId'])) {
 }
 
 if (isset($_GET['storeOfferId'])) {
-    $db_handle->insertQuery("delete from store_offer where id=" . $_GET['offerId'] . "");
+    $db_handle->insertQuery("delete from store_offer where id=" . $_GET['storeOfferId'] . "");
     echo 'success';
 }
 

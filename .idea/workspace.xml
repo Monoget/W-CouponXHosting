@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7cb97298-c149-4499-b18c-e621f7d8582d" name="Changes" comment="profile done">
+    <list default="true" id="7cb97298-c149-4499-b18c-e621f7d8582d" name="Changes" comment="update admin">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/include/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/include/navbar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/delete.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/trendingdeal/33922_black.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/trendingdeal/52318_network-3.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +65,7 @@
       <workItem from="1669474870084" duration="2351000" />
       <workItem from="1669491308755" duration="2123000" />
       <workItem from="1669569650978" duration="77000" />
-      <workItem from="1669646724311" duration="6504000" />
+      <workItem from="1669646724311" duration="7769000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1668779396037</created>
@@ -214,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669652325945</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="update admin">
+      <created>1669653347761</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1669653347761</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,8 +251,8 @@
     <MESSAGE value="Blog Category Done" />
     <MESSAGE value="Blog  Done" />
     <MESSAGE value="Others Done" />
-    <MESSAGE value="update admin" />
     <MESSAGE value="profile done" />
-    <option name="LAST_COMMIT_MESSAGE" value="profile done" />
+    <MESSAGE value="update admin" />
+    <option name="LAST_COMMIT_MESSAGE" value="update admin" />
   </component>
 </project>
