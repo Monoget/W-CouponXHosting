@@ -195,3 +195,41 @@ if (isset($_POST["addBlogCategory"])) {
                 window.location.href='Add-Blog-Category';
                 </script>";
 }
+
+if (isset($_POST["addStore"])) {
+    $blog_cate_id = $db_handle->checkValue($_POST['blog_cate_id']);
+
+    $title= $db_handle->checkValue($_POST['title']);
+
+    $description = $db_handle->checkValue($_POST['description']);
+
+    $image='';
+
+    if (!empty($_FILES['image']['name'])){
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber."_" . $_FILES['image']['name'];
+        $file_size = $_FILES['image']['size'];
+        $file_tmp = $_FILES['image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if (
+            $file_type != "jpg" && $file_type != "png" && $file_type != "jpeg"
+            && $file_type != "gif"
+        ) {
+            $attach_files = '';
+        } else {
+            move_uploaded_file($file_tmp, "../assets/images/blog/" .$file_name);
+            $image = "assets/images/blog/" . $file_name;
+        }
+    }
+
+    $inserted_at = date("Y-m-d H:i:s");
+
+
+    $insert = $db_handle->insertQuery("INSERT INTO `blog`(`blog_cate_id`, `title`, `description`, `image`, `inserted_at`) VALUES ('$blog_cate_id','$title','$description','$image','$inserted_at')");
+
+    echo "<script>
+                document.cookie = 'alert = 3;';
+                window.location.href='Add-Blog';
+                </script>";
+}

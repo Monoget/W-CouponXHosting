@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7cb97298-c149-4499-b18c-e621f7d8582d" name="Changes" comment="Store offer done">
+    <list default="true" id="7cb97298-c149-4499-b18c-e621f7d8582d" name="Changes" comment="Blog Category Done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/delete.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/insert.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/insert.php" afterDir="false" />
@@ -64,7 +64,7 @@
       <workItem from="1669474870084" duration="2351000" />
       <workItem from="1669491308755" duration="2123000" />
       <workItem from="1669569650978" duration="77000" />
-      <workItem from="1669646724311" duration="2361000" />
+      <workItem from="1669646724311" duration="3936000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1668779396037</created>
@@ -171,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669648444258</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Blog Category Done">
+      <created>1669649148561</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1669649148561</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +205,7 @@
     <MESSAGE value="add offer done" />
     <MESSAGE value="offer done" />
     <MESSAGE value="Store offer done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Store offer done" />
+    <MESSAGE value="Blog Category Done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Blog Category Done" />
   </component>
 </project>

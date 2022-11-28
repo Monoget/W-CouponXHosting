@@ -75,3 +75,11 @@ if (isset($_GET['blogCategoryId'])) {
     }
 }
 
+if (isset($_GET['blogId'])) {
+    $data = $db_handle->runQuery("select * FROM `blog` WHERE id='{$_GET['blogId']}'");
+    unlink('../'.$data[0]['image']);
+
+    $db_handle->insertQuery("delete from blog where id=" . $_GET['blogId'] . "");
+    echo 'success';
+}
+
