@@ -22,9 +22,9 @@ RewriteRule ^Offer offer.php [L]
 
 RewriteRule ^Get-Store getStore.php [L]
 
-RewriteRule ^Add-Store-Offer add-store-offer.php [L]
+RewriteRule ^Data-Add-Offer add-store-offer.php [L]
 
-RewriteRule ^Store-Offer store-offer.php [L]
+RewriteRule ^Data-Offer store-offer.php [L]
 
 RewriteRule ^Add-Blog-Category add-blog-category.php [L]
 

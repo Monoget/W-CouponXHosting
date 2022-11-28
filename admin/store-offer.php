@@ -20,7 +20,7 @@ $db_handle = new DBController();
     <meta name="format-detection" content="telephone=no">
 
     <!-- PAGE TITLE HERE -->
-    <title>Offer | CouponXHosting</title>
+    <title>Store Offer | CouponXHosting</title>
 
     <?php require_once('include/css.php'); ?>
 
@@ -70,7 +70,7 @@ $db_handle = new DBController();
                 <div class="collapse navbar-collapse justify-content-between">
                     <div class="header-left">
                         <div class="dashboard_bar">
-                            Offer
+                            Store Offer
                         </div>
                     </div>
                 </div>
@@ -100,13 +100,13 @@ $db_handle = new DBController();
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Update Offer</h4>
+                                <h4 class="card-title">Update Store Offer</h4>
                             </div>
                             <div class="card-body">
                                 <div class="basic-form">
-                                    <form method="post" action="Update" enctype="multipart/form-data">
+                                    <form method="post" action="Update">
 
-                                        <?php $data = $db_handle->runQuery("SELECT * FROM offer where id={$_GET['offerId']}"); ?>
+                                        <?php $data = $db_handle->runQuery("SELECT * FROM store_offer where id={$_GET['offerId']}"); ?>
 
                                         <input type="hidden" value="<?php echo $data[0]["id"]; ?>" name="id" required>
 
@@ -155,35 +155,33 @@ $db_handle = new DBController();
                                         </div>
 
                                         <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Offer Text</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" name="offer_text"  value="<?php echo $data[0]["offer_text"]; ?>" placeholder="Offer Text" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Offer Submit Name</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" name="offer_submit_name"  value="<?php echo $data[0]["offer_submit_name"]; ?>" placeholder="Offer Submit Name" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Title</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control" name="title" placeholder="Title" value="<?php echo $data[0]["title"]; ?>" required>
+                                                <input type="text" class="form-control" name="title"  value="<?php echo $data[0]["title"]; ?>" placeholder="Title" required>
                                             </div>
                                         </div>
-
                                         <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">Subtitle</label>
+                                            <label class="col-sm-3 col-form-label">Details</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control" name="subtitle" placeholder="Subtitle" value="<?php echo $data[0]["subtitle"]; ?>" required>
+                                                <input type="text" class="form-control" name="details"  value="<?php echo $data[0]["details"]; ?>" placeholder="Details" required>
                                             </div>
                                         </div>
-
                                         <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">Link</label>
+                                            <label class="col-sm-3 col-form-label">Code</label>
                                             <div class="col-sm-9">
-                                                <input type="url" class="form-control" name="o_link" placeholder="Link" value="<?php echo $data[0]["o_link"]; ?>" required>
-                                            </div>
-                                        </div>
-
-                                        <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">Image</label>
-                                            <div class="col-sm-6">
-                                                <div class="form-file">
-                                                    <input type="file" class="form-file-input" name="image"/>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <img src="../<?php echo $data[0]["image"]; ?>" class="img-fluid" alt=""/>
+                                                <input type="text" class="form-control" name="code"  value="<?php echo $data[0]["code"]; ?>" placeholder="Code" required>
                                             </div>
                                         </div>
 
@@ -211,7 +209,7 @@ $db_handle = new DBController();
                                         <div class="mb-3 row">
                                             <div class="col-sm-6 mx-auto">
                                                 <button type="submit" class="btn btn-primary w-25"
-                                                        name="updateOffer">Submit
+                                                        name="updateStoreOffer">Submit
                                                 </button>
                                             </div>
                                         </div>
@@ -224,7 +222,7 @@ $db_handle = new DBController();
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Offer</h4>
+                                <h4 class="card-title">Store Offer</h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -234,19 +232,19 @@ $db_handle = new DBController();
                                             <th>SL</th>
                                             <th>Category</th>
                                             <th>Store</th>
-                                            <th>Title</th>
-                                            <th>Subtitle</th>
-                                            <th>Link</th>
-                                            <th>Image</th>
                                             <th>Offer Text</th>
+                                            <th>Offer Submit Name</th>
+                                            <th>Title</th>
+                                            <th>Details</th>
+                                            <th>Code</th>
                                             <th>Status</th>
                                             <th>Action</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <?php
-                                        $data = $db_handle->runQuery("SELECT * FROM offer order by id desc");
-                                        $row_count = $db_handle->numRows("SELECT * FROM offer order by id desc");
+                                        $data = $db_handle->runQuery("SELECT * FROM store_offer order by id desc");
+                                        $row_count = $db_handle->numRows("SELECT * FROM store_offer order by id desc");
 
                                         for ($i = 0; $i < $row_count; $i++) {
                                             ?>
@@ -264,15 +262,11 @@ $db_handle = new DBController();
                                                     echo $store[0]["s_name"];
                                                     ?>
                                                 </td>
-                                                <td><?php echo $data[$i]["title"]; ?></td>
-                                                <td><?php echo $data[$i]["subtitle"]; ?></td>
-                                                <td><a href="<?php echo $data[$i]["o_link"]; ?>" target="_blank">link</a></td>
-                                                <td>
-                                                    <a href="../<?php echo $data[$i]["image"]; ?>" target="_blank">
-                                                        image
-                                                    </a>
-                                                </td>
                                                 <td><?php echo $data[$i]["offer_text"]; ?></td>
+                                                <td><?php echo $data[$i]["offer_submit_name"]; ?></td>
+                                                <td><?php echo $data[$i]["title"]; ?></td>
+                                                <td><?php echo $data[$i]["details"]; ?></td>
+                                                <td><?php echo $data[$i]["code"]; ?></td>
                                                 <td>
                                                     <?php
                                                     if ($data[$i]["status"] == 0) {
@@ -305,7 +299,7 @@ $db_handle = new DBController();
                                                         </div>
                                                         <div class="dropdown-menu dropdown-menu-end">
                                                             <a class="dropdown-item"
-                                                               href="Offer?offerId=<?php echo $data[$i]["id"]; ?>">Edit</a>
+                                                               href="Data-Offer?offerId=<?php echo $data[$i]["id"]; ?>">Edit</a>
                                                             <a class="dropdown-item"
                                                                onclick="offerDelete(<?php echo $data[$i]["id"]; ?>);">Delete</a>
                                                         </div>
@@ -365,7 +359,7 @@ $db_handle = new DBController();
                     type: 'get',
                     url: 'Delete',
                     data: {
-                        offerId: id
+                        storeOfferId: id
                     },
                     success: function (data) {
                         if (data.toString() === 'P') {
@@ -374,7 +368,7 @@ $db_handle = new DBController();
                                 'Your have Offer.',
                                 'error'
                             ).then((result) => {
-                                window.location = 'Offer';
+                                window.location = 'Data-Offer';
                             });
                         } else {
                             Swal.fire(
@@ -382,7 +376,7 @@ $db_handle = new DBController();
                                 'Offer has been deleted.',
                                 'success'
                             ).then((result) => {
-                                window.location = 'Offer';
+                                window.location = 'Data-Offer';
                             });
                         }
                     }
@@ -393,7 +387,7 @@ $db_handle = new DBController();
                     'Offer is safe :)',
                     'error'
                 ).then((result) => {
-                    window.location = 'Offer';
+                    window.location = 'Data-Offer';
                 });
             }
         })

@@ -104,7 +104,7 @@ $db_handle = new DBController();
                             </div>
                             <div class="card-body">
                                 <div class="basic-form">
-                                    <form method="post" action="Update">
+                                    <form method="post" action="Update" enctype="multipart/form-data">
 
                                         <?php $data = $db_handle->runQuery("SELECT * FROM trending where id={$_GET['trendingDealId']}"); ?>
 

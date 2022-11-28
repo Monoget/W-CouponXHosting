@@ -85,8 +85,8 @@
                     <span class="nav-text">Store Offer</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="Add-Store-Offer">Add Store Offer</a></li>
-                    <li><a href="Store-Offer">Store Offer</a></li>
+                    <li><a href="Data-Add-Offer">Add Store Offer</a></li>
+                    <li><a href="Data-Offer">Store Offer</a></li>
                 </ul>
             </li>
             <li><a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">

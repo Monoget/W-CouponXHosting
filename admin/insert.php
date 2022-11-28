@@ -154,3 +154,31 @@ if (isset($_POST["addOffer"])) {
                 window.location.href='Add-Offer';
                 </script>";
 }
+
+if (isset($_POST["addStoreOffer"])) {
+
+    $category_id = $db_handle->checkValue($_POST['category_id']);
+
+    $store_id = $db_handle->checkValue($_POST['store_id']);
+
+    $offer_text= $db_handle->checkValue($_POST['offer_text']);
+
+    $offer_submit_name = $db_handle->checkValue($_POST['offer_submit_name']);
+
+    $title = $db_handle->checkValue($_POST['title']);
+
+    $details = $db_handle->checkValue($_POST['details']);
+
+    $code = $db_handle->checkValue($_POST['code']);
+
+
+    $inserted_at = date("Y-m-d H:i:s");
+
+
+    $insert = $db_handle->insertQuery("INSERT INTO `store_offer`(`category_id`, `store_id`, `offer_text`, `offer_submit_name`, `title`, `details`, `code`, `inserted_at`) VALUES('$category_id','$store_id','$offer_text','$offer_submit_name','$title','$details','$code','$inserted_at')");
+
+    echo "<script>
+                document.cookie = 'alert = 3;';
+                window.location.href='Data-Add-Offer';
+                </script>";
+}

@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cb97298-c149-4499-b18c-e621f7d8582d" name="Changes" comment="offer done">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2c43c41e-4607-4eb3-b486-ed0196bf677e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2c43c41e-4607-4eb3-b486-ed0196bf677e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/delete.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/admin/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/include/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/include/navbar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/insert.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/insert.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/offer.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/offer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/trending-deal.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/trending-deal.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/update.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/update.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +64,11 @@
       <workItem from="1668798054811" duration="3106000" />
       <workItem from="1669352584542" duration="4842000" />
       <workItem from="1669376181639" duration="2683000" />
-      <workItem from="1669390437908" duration="9628000" />
+      <workItem from="1669390437908" duration="10331000" />
+      <workItem from="1669474870084" duration="2351000" />
+      <workItem from="1669491308755" duration="2123000" />
+      <workItem from="1669569650978" duration="77000" />
+      <workItem from="1669646724311" duration="1573000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1668779396037</created>
@@ -146,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669407584905</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="offer done">
+      <created>1669407744993</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1669407744993</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
