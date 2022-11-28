@@ -196,7 +196,7 @@ if (isset($_POST["addBlogCategory"])) {
                 </script>";
 }
 
-if (isset($_POST["addStore"])) {
+if (isset($_POST["addBlog"])) {
     $blog_cate_id = $db_handle->checkValue($_POST['blog_cate_id']);
 
     $title= $db_handle->checkValue($_POST['title']);
