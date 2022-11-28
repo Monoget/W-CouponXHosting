@@ -59,3 +59,19 @@ if (isset($_GET['offerId'])) {
     echo 'success';
 }
 
+if (isset($_GET['storeOfferId'])) {
+    $db_handle->insertQuery("delete from store_offer where id=" . $_GET['offerId'] . "");
+    echo 'success';
+}
+
+if (isset($_GET['blogCategoryId'])) {
+    $row = $db_handle->numRows("select * FROM `blog` WHERE blog_cate_id='{$_GET['blogCategoryId']}'");
+
+    if ($row == 0) {
+        $db_handle->insertQuery("delete from blog_category where id=" . $_GET['blogCategoryId'] . "");
+        echo 'success';
+    } else {
+        echo 'P';
+    }
+}
+

@@ -204,3 +204,17 @@ if (isset($_POST['updateStoreOffer'])) {
                 </script>";
 
 }
+
+if (isset($_POST['updateBlogCategory'])) {
+    $id = $db_handle->checkValue($_POST['id']);
+    $name = $db_handle->checkValue($_POST['bc_name']);
+    $status = $db_handle->checkValue($_POST['status']);
+
+    $update = $db_handle->insertQuery("update blog_category set bc_name='$name', status='$status' where id='{$id}'");
+
+    echo "<script>
+                document.cookie = 'alert = 3;';
+                window.location.href='Blog-Category';
+                </script>";
+
+}

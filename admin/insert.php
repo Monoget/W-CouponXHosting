@@ -182,3 +182,16 @@ if (isset($_POST["addStoreOffer"])) {
                 window.location.href='Data-Add-Offer';
                 </script>";
 }
+
+if (isset($_POST["addBlogCategory"])) {
+    $name = $db_handle->checkValue($_POST['bc_name']);
+
+    $inserted_at = date("Y-m-d H:i:s");
+
+    $insert = $db_handle->insertQuery("INSERT INTO `blog_category`(`bc_name`,  `inserted_at`) VALUES ('$name','$inserted_at')");
+
+    echo "<script>
+                document.cookie = 'alert = 3;';
+                window.location.href='Add-Blog-Category';
+                </script>";
+}
