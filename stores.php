@@ -1,23 +1,7 @@
 <?php
 require_once("include/dbController.php");
 $db_handle = new DBController();
-?>
-<!doctype html>
-<html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <?php require_once('include/css.php'); ?>
-
-    <title>Stores - CouponXHosting</title>
-</head>
-<body>
-<!-- NAV Start -->
-<?php require_once('include/menu.php'); ?>
-<!-- NAV End -->
-<?php
 if (isset($_GET['domain'])) {
     $store_data = $db_handle->runQuery("SELECT * FROM store where s_domain='{$_GET['domain']}'");
 } else {
@@ -28,6 +12,25 @@ if (isset($_GET['domain'])) {
     <?php
 }
 ?>
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <?php require_once('include/css.php'); ?>
+
+    <meta name="description" content="><?php echo $store_data[0]["meta_description"]; ?>">
+    <meta name="keywords" content="<?php echo $store_data[0]["meta_keyword"]; ?>">
+
+    <title><?php echo $store_data[0]["meta_title"]; ?></title>
+</head>
+<body>
+<!-- NAV Start -->
+<?php require_once('include/menu.php'); ?>
+<!-- NAV End -->
+
 <section class="bg-light pt-5 pb-5">
     <div class="container">
         <div class="row">

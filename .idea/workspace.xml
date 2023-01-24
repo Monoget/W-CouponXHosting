@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7cb97298-c149-4499-b18c-e621f7d8582d" name="Changes" comment="update admin">
+    <list default="true" id="7cb97298-c149-4499-b18c-e621f7d8582d" name="Changes" comment="update all">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/dbController.php" beforeDir="false" afterPath="$PROJECT_DIR$/include/dbController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/include/menu.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stores.php" beforeDir="false" afterPath="$PROJECT_DIR$/stores.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,11 +33,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/images/admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/db" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\W-CouponXHosting\db" />
       <recent name="C:\xampp\htdocs\W-CouponXHosting\assets\images\admin" />
       <recent name="C:\xampp\htdocs\W-CouponXHosting\admin" />
     </key>
@@ -68,7 +67,7 @@
       <workItem from="1669646724311" duration="9075000" />
       <workItem from="1669664539515" duration="615000" />
       <workItem from="1669694107083" duration="15000" />
-      <workItem from="1674590411105" duration="4175000" />
+      <workItem from="1674590411105" duration="4667000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1668779396037</created>
@@ -238,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669655016227</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="update all">
+      <created>1674594748711</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1674594748711</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,6 +277,7 @@
     <MESSAGE value="profile done" />
     <MESSAGE value="solve sore offer delete" />
     <MESSAGE value="update admin" />
-    <option name="LAST_COMMIT_MESSAGE" value="update admin" />
+    <MESSAGE value="update all" />
+    <option name="LAST_COMMIT_MESSAGE" value="update all" />
   </component>
 </project>
