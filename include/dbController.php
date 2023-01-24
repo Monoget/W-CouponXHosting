@@ -10,10 +10,10 @@ class DBController {
 
     function __construct() {
         if($_SERVER['SERVER_NAME']=="couponxhosting.com"||$_SERVER['SERVER_NAME']=="www.couponxhosting.com"){
-            $this->host = "localhost";
-            $this->user = "upgggnkkroycy";
-            $this->password = "3e4bt%D1&2%o";
-            $this->database = "dbqgbcctouhijk";
+            $this->host = "server323";
+            $this->user = "coupgkvg_coupon";
+            $this->password = ")@y=29nDeA(5";
+            $this->database = "coupgkvg_coupon";
         }
 
         $this->conn = $this->connectDB();

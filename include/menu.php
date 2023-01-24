@@ -2,7 +2,8 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="Home"><img src="assets/images/logo/logo-white.png" class="img-fluid" alt=""/></a>
+                <a class="navbar-brand" href="Home"><img src="assets/images/logo/logo-white.png" class="img-fluid"
+                                                         alt=""/></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -19,30 +20,29 @@
                                 Store
                             </a>
                             <ul class="dropdown-menu multi-level">
-                                <li class="dropdown-submenu">
-                                    <a href="#" class="dropdown-item dropdown-toggle"
-                                       data-toggle="dropdown">Dropdown</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="Stores" class="dropdown-item">Store</a></li>
-                                        <!--<li class="dropdown-submenu">
-                                            <a href="#" class="dropdown-item dropdown-toggle" data-toggle="dropdown">Dropdown</a>
-                                            <ul class="dropdown-menu">
-                                                <li class="dropdown-submenu">
-                                                    <a href="#" class="dropdown-item dropdown-toggle" data-toggle="dropdown">Dropdown</a>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a href="#" class="dropdown-item">Action</a></li>
-                                                        <li><a href="#" class="dropdown-item">Another action</a></li>
-                                                        <li><a href="#" class="dropdown-item">Something else here</a></li>
-                                                        <li class="divider"></li>
-                                                        <li><a href="#" class="dropdown-item">Separated link</a></li>
-                                                        <li class="divider"></li>
-                                                        <li><a href="#" class="dropdown-item">One more separated link</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>-->
-                                    </ul>
-                                </li>
+                                <?php
+                                $category_data = $db_handle->runQuery("SELECT * FROM category where status=1 order by id asc");
+                                $row_count = $db_handle->numRows("SELECT * FROM category where status=1 order by id asc");
+
+                                for ($i = 0; $i < $row_count; $i++) {
+                                    ?>
+                                    <li class="dropdown-submenu">
+                                        <a href="#" class="dropdown-item dropdown-toggle"
+                                           data-toggle="dropdown"><?php echo $category_data[$i]["c_name"]; ?></a>
+                                        <ul class="dropdown-menu">
+                                            <?php
+                                            $id=$category_data[$i]["id"];
+
+                                            $store_data = $db_handle->runQuery("SELECT * FROM store where category_id={$id} and status=1 order by id asc");
+                                            $row = $db_handle->numRows("SELECT * FROM store where category_id={$id} and status=1 order by id asc");
+
+                                            for ($j = 0; $j < $row; $j++) {
+                                                ?>
+                                                <li><a href="Stores?domain=<?php echo $store_data[$j]["s_domain"]; ?>" class="dropdown-item"><?php echo $store_data[$j]["s_name"]; ?></a></li>
+                                            <?php } ?>
+                                        </ul>
+                                    </li>
+                                <?php } ?>
                             </ul>
                         </li>
                         <li class="nav-item">

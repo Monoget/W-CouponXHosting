@@ -17,13 +17,23 @@ $db_handle = new DBController();
 <!-- NAV Start -->
 <?php require_once('include/menu.php'); ?>
 <!-- NAV End -->
-
+<?php
+if (isset($_GET['domain'])) {
+    $store_data = $db_handle->runQuery("SELECT * FROM store where s_domain='{$_GET['domain']}'");
+} else {
+    ?>
+    <script>
+        window.location.href = "Home";
+    </script>
+    <?php
+}
+?>
 <section class="bg-light pt-5 pb-5">
     <div class="container">
         <div class="row">
             <div class="col-lg-3">
                 <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
+                    <img class="card-img" src="<?php echo $store_data[0]["image"]; ?>"
                          alt="a snow-capped mountain range"/>
                 </div>
                 <p>When you buy through links on CouponXHosting <u>we may earn a commission.</u></p>
@@ -32,7 +42,7 @@ $db_handle = new DBController();
                 <hr/>
                 <div class="d-md-block d-none">
                     <p>
-                        <strong>About Macy's</strong>
+                        <strong>About <?php echo $store_data[0]["s_name"]; ?></strong>
                     </p>
                     <p>
                         <strong>
@@ -46,7 +56,7 @@ $db_handle = new DBController();
                         </strong>
                     </p>
                     <p>
-                        <strong>Rate Macy's Offers</strong>
+                        <strong>Rate <?php echo $store_data[0]["s_name"]; ?> Offers</strong>
                     </p>
                     <p>
                         <span class="fa fa-star fa-2x"></span>
@@ -56,48 +66,44 @@ $db_handle = new DBController();
                         <span class="fa fa-star fa-2x"></span>
                     </p>
                     <p>
-                        <strong>About Macy’s</strong>
+                        <strong>About <?php echo $store_data[0]["s_name"]; ?></strong>
                     </p>
                     <p>
-                        Founded in 1858 in New York City, New York, Macy’s has a long and prestigious history as one of the
-                        nation’s premier department stores. Today, with over 760 stores and a thriving online store, the
-                        chain
-                        offers a great array of products, including designer goods, fine jewelry, fashion, shoes, home
-                        appliances and more. During the holiday season, they often stock some of the most popular toys and
-                        gifts, too. The brand aims to cultivate regular shoppers with frequent deals, discounts and sales,
-                        which
-                        is wonderful news for bargain hunters with an eye for the finer things in life.
+                        <?php echo $store_data[0]["about"]; ?>
                     </p>
                     <p>
                         <strong>Annual Sales</strong>
                     </p>
                     <p>
-                        Nearly every holiday sees a Macy’s sale. They use them to move seasonal merchandise quickly and bring
-                        shoppers into their brick-and-mortar stores. Memorial Day,
+                        <?php echo $store_data[0]["annual"]; ?>
                     </p>
                     <p>
                         <strong>Similar Stores</strong>
                     </p>
                     <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="#">Kohl's</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="#">SHEIN</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="#">Bed Bath & Beyond®</a>
-                        </li>
+                        <?php
+                        $id = $store_data[0]["category_id"];
+
+                        $data = $db_handle->runQuery("SELECT * FROM store where category_id={$id} and status=1 order by RAND() asc LIMIT 5");
+                        $row = $db_handle->numRows("SELECT * FROM store where category_id={$id} and status=1 order by RAND() asc LIMIT 5");
+                        for ($j = 0; $j < $row; $j++) {
+                            ?>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark"
+                                   href="Stores?domain=<?php echo $store_data[$j]["s_domain"]; ?>"><?php echo $data[$j]["s_name"]; ?></a>
+                            </li>
+                        <?php } ?>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-9">
                 <div class="row">
                     <div class="col-lg-9 mt-2">
-                        <h1>Macy's Coupons & Promo Codes </h1>
+                        <h1><?php echo $store_data[0]["s_name"]; ?> Coupons & Promo Codes </h1>
                         <ul class="nav">
                             <li class="nav-item">
-                                <a class="nav-link text-dark" aria-current="page" href="#"><i class="fa-solid fa-check"></i> In-Store Pickup</a>
+                                <a class="nav-link text-dark" aria-current="page" href="#"><i
+                                            class="fa-solid fa-check"></i> In-Store Pickup</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" href="#"><i class="fa-solid fa-check"></i> Curbside</a>
@@ -106,12 +112,14 @@ $db_handle = new DBController();
                                 <a class="nav-link text-dark" href="#"><i class="fa-solid fa-check"></i> Delivery</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" href="#"><i class="fa-solid fa-check"></i> Free Shipping</a>
+                                <a class="nav-link text-dark" href="#"><i class="fa-solid fa-check"></i> Free
+                                    Shipping</a>
                             </li>
                         </ul>
                     </div>
                     <div class="col-lg-3 mt-4">
-                        <i class="fa-solid fa-tag"></i> Submit a Coupon
+                        <a href="#" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                                    class="fa-solid fa-tag"></i> Submit a Coupon</a>
                     </div>
                     <div class="col-lg-12 mt-3">
                         <div class="card">
@@ -132,159 +140,7 @@ $db_handle = new DBController();
                                                 <p>Added by kimeeb . 579 uses today</p>
                                             </div>
                                             <div class="col-lg-2 pe-2">
-                                                <button type="button" class="btn btn-secondary">FRIEND</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body bg-light">
-                                <div class="row">
-                                    <div class="col-10">
-                                        See Details
-                                    </div>
-                                    <div class="col-2">
-                                        <i class="fa-solid fa-thumbs-up me-2"></i>
-                                        <i class="fa-solid fa-thumbs-down"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 mt-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-lg-2 col-3 text-center p-3">
-                                        <h2>
-                                            UP TO
-                                            30%
-                                            OFF
-                                        </h2>
-                                    </div>
-                                    <div class="col-lg-10 col-9">
-                                        <p>CODE</p>
-                                        <div class="row">
-                                            <div class="col-10">
-                                                <h5>Friends And Family Sale! Extra 30% Off + 15% Off Beauty</h5>
-                                                <p>Added by kimeeb . 579 uses today</p>
-                                            </div>
-                                            <div class="col-lg-2 pe-2">
-                                                <button type="button" class="btn btn-secondary">FRIEND</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body bg-light">
-                                <div class="row">
-                                    <div class="col-10">
-                                        See Details
-                                    </div>
-                                    <div class="col-2">
-                                        <i class="fa-solid fa-thumbs-up me-2"></i>
-                                        <i class="fa-solid fa-thumbs-down"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 mt-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-lg-2 col-3 text-center p-3">
-                                        <h2>
-                                            UP TO
-                                            30%
-                                            OFF
-                                        </h2>
-                                    </div>
-                                    <div class="col-lg-10 col-9">
-                                        <p>CODE</p>
-                                        <div class="row">
-                                            <div class="col-10">
-                                                <h5>Friends And Family Sale! Extra 30% Off + 15% Off Beauty</h5>
-                                                <p>Added by kimeeb . 579 uses today</p>
-                                            </div>
-                                            <div class="col-lg-2 pe-2">
-                                                <button type="button" class="btn btn-secondary">FRIEND</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body bg-light">
-                                <div class="row">
-                                    <div class="col-10">
-                                        See Details
-                                    </div>
-                                    <div class="col-2">
-                                        <i class="fa-solid fa-thumbs-up me-2"></i>
-                                        <i class="fa-solid fa-thumbs-down"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 mt-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-lg-2 col-3 text-center p-3">
-                                        <h2>
-                                            UP TO
-                                            30%
-                                            OFF
-                                        </h2>
-                                    </div>
-                                    <div class="col-lg-10 col-9">
-                                        <p>CODE</p>
-                                        <div class="row">
-                                            <div class="col-10">
-                                                <h5>Friends And Family Sale! Extra 30% Off + 15% Off Beauty</h5>
-                                                <p>Added by kimeeb . 579 uses today</p>
-                                            </div>
-                                            <div class="col-lg-2 pe-2">
-                                                <button type="button" class="btn btn-secondary">FRIEND</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body bg-light">
-                                <div class="row">
-                                    <div class="col-10">
-                                        See Details
-                                    </div>
-                                    <div class="col-2">
-                                        <i class="fa-solid fa-thumbs-up me-2"></i>
-                                        <i class="fa-solid fa-thumbs-down"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 mt-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-lg-2 col-3 text-center p-3">
-                                        <h2>
-                                            UP TO
-                                            30%
-                                            OFF
-                                        </h2>
-                                    </div>
-                                    <div class="col-lg-10 col-9">
-                                        <p>CODE</p>
-                                        <div class="row">
-                                            <div class="col-10">
-                                                <h5>Friends And Family Sale! Extra 30% Off + 15% Off Beauty</h5>
-                                                <p>Added by kimeeb . 579 uses today</p>
-                                            </div>
-                                            <div class="col-lg-2 pe-2">
-                                                <button type="button" class="btn btn-secondary">FRIEND</button>
+                                                <button type="button" class="btn btn-secondary">Get Deal</button>
                                             </div>
                                         </div>
                                     </div>
@@ -333,6 +189,42 @@ $db_handle = new DBController();
     </div>
 </section>
 <!-- Newsletter End -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Submit Coupon</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="post">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Offer Title</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Offer Text</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Offer Details</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Code</label>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 <!-- Footer Start -->
 <?php require_once('include/footer.php'); ?>
