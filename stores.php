@@ -2,8 +2,10 @@
 require_once("include/dbController.php");
 $db_handle = new DBController();
 
+$store_id=0;
 if (isset($_GET['domain'])) {
-    $store_data = $db_handle->runQuery("SELECT * FROM store where s_domain='{$_GET['domain']}'");
+    $page_store_data = $db_handle->runQuery("SELECT * FROM store where s_domain='{$_GET['domain']}'");
+    $store_id=$page_store_data[0]['id'];
 } else {
     ?>
     <script>
@@ -21,10 +23,10 @@ if (isset($_GET['domain'])) {
 
     <?php require_once('include/css.php'); ?>
 
-    <meta name="description" content="><?php echo $store_data[0]["meta_description"]; ?>">
-    <meta name="keywords" content="<?php echo $store_data[0]["meta_keyword"]; ?>">
+    <meta name="description" content="><?php echo $page_store_data[0]["meta_description"]; ?>">
+    <meta name="keywords" content="<?php echo $page_store_data[0]["meta_keyword"]; ?>">
 
-    <title><?php echo $store_data[0]["meta_title"]; ?></title>
+    <title><?php echo $page_store_data[0]["meta_title"]; ?></title>
 </head>
 <body>
 <!-- NAV Start -->
@@ -36,7 +38,7 @@ if (isset($_GET['domain'])) {
         <div class="row">
             <div class="col-lg-3">
                 <div class="card mt-3">
-                    <img class="card-img" src="<?php echo $store_data[0]["image"]; ?>"
+                    <img class="card-img" src="<?php echo $page_store_data[0]["image"]; ?>"
                          alt="a snow-capped mountain range"/>
                 </div>
                 <p>When you buy through links on CouponXHosting <u>we may earn a commission.</u></p>
@@ -45,7 +47,7 @@ if (isset($_GET['domain'])) {
                 <hr/>
                 <div class="d-md-block d-none">
                     <p>
-                        <strong>About <?php echo $store_data[0]["s_name"]; ?></strong>
+                        <strong>About <?php echo $page_store_data[0]["s_name"]; ?></strong>
                     </p>
                     <p>
                         <strong>
@@ -59,7 +61,7 @@ if (isset($_GET['domain'])) {
                         </strong>
                     </p>
                     <p>
-                        <strong>Rate <?php echo $store_data[0]["s_name"]; ?> Offers</strong>
+                        <strong>Rate <?php echo $page_store_data[0]["s_name"]; ?> Offers</strong>
                     </p>
                     <p>
                         <span class="fa fa-star fa-2x"></span>
@@ -69,23 +71,23 @@ if (isset($_GET['domain'])) {
                         <span class="fa fa-star fa-2x"></span>
                     </p>
                     <p>
-                        <strong>About <?php echo $store_data[0]["s_name"]; ?></strong>
+                        <strong>About <?php echo $page_store_data[0]["s_name"]; ?></strong>
                     </p>
                     <p>
-                        <?php echo $store_data[0]["about"]; ?>
+                        <?php echo $page_store_data[0]["about"]; ?>
                     </p>
                     <p>
                         <strong>Annual Sales</strong>
                     </p>
                     <p>
-                        <?php echo $store_data[0]["annual"]; ?>
+                        <?php echo $page_store_data[0]["annual"]; ?>
                     </p>
                     <p>
                         <strong>Similar Stores</strong>
                     </p>
                     <ul class="nav flex-column">
                         <?php
-                        $id = $store_data[0]["category_id"];
+                        $id = $page_store_data[0]["category_id"];
 
                         $data = $db_handle->runQuery("SELECT * FROM store where category_id={$id} and status=1 order by RAND() asc LIMIT 5");
                         $row = $db_handle->numRows("SELECT * FROM store where category_id={$id} and status=1 order by RAND() asc LIMIT 5");
@@ -93,7 +95,7 @@ if (isset($_GET['domain'])) {
                             ?>
                             <li class="nav-item">
                                 <a class="nav-link text-dark"
-                                   href="Stores?domain=<?php echo $store_data[$j]["s_domain"]; ?>"><?php echo $data[$j]["s_name"]; ?></a>
+                                   href="Stores?domain=<?php echo $data[$j]["s_domain"]; ?>"><?php echo $data[$j]["s_name"]; ?></a>
                             </li>
                         <?php } ?>
                     </ul>
@@ -102,7 +104,7 @@ if (isset($_GET['domain'])) {
             <div class="col-lg-9">
                 <div class="row">
                     <div class="col-lg-9 mt-2">
-                        <h1><?php echo $store_data[0]["s_name"]; ?> Coupons & Promo Codes </h1>
+                        <h1><?php echo $page_store_data[0]["s_name"]; ?> Coupons & Promo Codes </h1>
                         <ul class="nav">
                             <li class="nav-item">
                                 <a class="nav-link text-dark" aria-current="page" href="#"><i
@@ -124,26 +126,30 @@ if (isset($_GET['domain'])) {
                         <a href="#" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
                                     class="fa-solid fa-tag"></i> Submit a Coupon</a>
                     </div>
+                    <?php
+                    $id = $page_store_data[0]["category_id"];
+
+                    $data = $db_handle->runQuery("SELECT * FROM offer where category_id={$id} and store_id={$store_id} and status=1 order by id desc");
+                    $row = $db_handle->numRows("SELECT * FROM offer where category_id={$id} and store_id={$store_id} and status=1 order by id desc");
+                    for ($j = 0; $j < $row; $j++) {
+                    ?>
                     <div class="col-lg-12 mt-3">
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-2 col-3 text-center p-3">
                                         <h2>
-                                            UP TO
-                                            30%
-                                            OFF
+                                            <?php echo $data[$j]["title"]; ?>
                                         </h2>
                                     </div>
                                     <div class="col-lg-10 col-9">
-                                        <p>CODE</p>
-                                        <div class="row">
+                                        <div class="row pt-5">
                                             <div class="col-10">
-                                                <h5>Friends And Family Sale! Extra 30% Off + 15% Off Beauty</h5>
+                                                <h5><?php echo $data[$j]["subtitle"]; ?></h5>
                                                 <p>Added by kimeeb . 579 uses today</p>
                                             </div>
                                             <div class="col-lg-2 pe-2">
-                                                <button type="button" class="btn btn-secondary">Get Deal</button>
+                                                <a href="<?php echo $data[$j]["o_link"]; ?>" class="btn btn-primary">Get Deal</a>
                                             </div>
                                         </div>
                                     </div>
@@ -152,7 +158,7 @@ if (isset($_GET['domain'])) {
                             <div class="card-body bg-light">
                                 <div class="row">
                                     <div class="col-10">
-                                        See Details
+                                        <?php echo $data[$j]["offer_text"]; ?>
                                     </div>
                                     <div class="col-2">
                                         <i class="fa-solid fa-thumbs-up me-2"></i>
@@ -162,6 +168,8 @@ if (isset($_GET['domain'])) {
                             </div>
                         </div>
                     </div>
+                    <?php } ?>
+
                 </div>
             </div>
         </div>

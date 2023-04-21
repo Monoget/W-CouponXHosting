@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="MySQL - couponxhosting@localhost">
-  <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.32">
+  <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.45">
     <root id="1">
       <DefaultCasing>lower/lower</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
@@ -1234,507 +1234,507 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
     <column id="351" parent="340" name="id">
-      <DataType>int(11)|0s</DataType>
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="352" parent="340" name="name">
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="353" parent="340" name="ip">
-      <DataType>varchar(150)|0s</DataType>
+      <DasType>varchar(150)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="354" parent="340" name="image">
-      <DataType>varchar(100)|0s</DataType>
+      <DasType>varchar(100)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="355" parent="340" name="email">
-      <DataType>varchar(30)|0s</DataType>
+      <DasType>varchar(30)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
     <column id="356" parent="340" name="password">
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <column id="357" parent="340" name="role">
-      <DataType>varchar(15)|0s</DataType>
+      <DasType>varchar(15)|0s</DasType>
       <DefaultExpression>&apos;sales&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
     <column id="358" parent="340" name="inserted_at">
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
     <column id="359" parent="340" name="updated_at">
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>current_timestamp()</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>current_timestamp()</OnUpdate>
       <Position>9</Position>
     </column>
     <key id="360" parent="340" name="PRIMARY">
-      <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
+      <UnderlyingIndexColNames>id</UnderlyingIndexColNames>
     </key>
     <column id="361" parent="341" name="id">
-      <DataType>int(11)|0s</DataType>
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="362" parent="341" name="blog_cate_id">
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="363" parent="341" name="title">
-      <DataType>varchar(250)|0s</DataType>
+      <DasType>varchar(250)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="364" parent="341" name="description">
-      <DataType>varchar(10000)|0s</DataType>
+      <DasType>varchar(10000)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="365" parent="341" name="image">
-      <DataType>varchar(500)|0s</DataType>
+      <DasType>varchar(500)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
     <column id="366" parent="341" name="status">
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <DefaultExpression>1</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <column id="367" parent="341" name="inserted_at">
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
     <column id="368" parent="341" name="updated_at">
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>current_timestamp()</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>current_timestamp()</OnUpdate>
       <Position>8</Position>
     </column>
     <key id="369" parent="341" name="PRIMARY">
-      <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
+      <UnderlyingIndexColNames>id</UnderlyingIndexColNames>
     </key>
     <column id="370" parent="342" name="id">
-      <DataType>int(11)|0s</DataType>
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="371" parent="342" name="bc_name">
-      <DataType>varchar(150)|0s</DataType>
+      <DasType>varchar(150)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="372" parent="342" name="status">
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <DefaultExpression>1</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="373" parent="342" name="inserted_at">
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="374" parent="342" name="updated_at">
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>current_timestamp()</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>current_timestamp()</OnUpdate>
       <Position>5</Position>
     </column>
     <key id="375" parent="342" name="PRIMARY">
-      <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
+      <UnderlyingIndexColNames>id</UnderlyingIndexColNames>
     </key>
     <column id="376" parent="343" name="id">
-      <DataType>int(11)|0s</DataType>
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="377" parent="343" name="c_name">
-      <DataType>varchar(150)|0s</DataType>
+      <DasType>varchar(150)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="378" parent="343" name="status">
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <DefaultExpression>1</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="379" parent="343" name="inserted_at">
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="380" parent="343" name="updated_at">
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>current_timestamp()</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>current_timestamp()</OnUpdate>
       <Position>5</Position>
     </column>
     <key id="381" parent="343" name="PRIMARY">
-      <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
+      <UnderlyingIndexColNames>id</UnderlyingIndexColNames>
     </key>
     <column id="382" parent="344" name="id">
-      <DataType>int(11)|0s</DataType>
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="383" parent="344" name="email">
-      <DataType>varchar(250)|0s</DataType>
+      <DasType>varchar(250)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="384" parent="344" name="inserted_at">
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>current_timestamp()</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>current_timestamp()</OnUpdate>
       <Position>3</Position>
     </column>
     <key id="385" parent="344" name="PRIMARY">
-      <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
+      <UnderlyingIndexColNames>id</UnderlyingIndexColNames>
     </key>
     <column id="386" parent="345" name="id">
-      <DataType>int(11)|0s</DataType>
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="387" parent="345" name="store_id">
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="388" parent="345" name="category_id">
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="389" parent="345" name="title">
-      <DataType>varchar(150)|0s</DataType>
+      <DasType>varchar(150)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="390" parent="345" name="subtitle">
-      <DataType>varchar(200)|0s</DataType>
+      <DasType>varchar(200)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
     <column id="391" parent="345" name="image">
-      <DataType>varchar(250)|0s</DataType>
+      <DasType>varchar(250)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <column id="392" parent="345" name="o_link">
-      <DataType>varchar(1000)|0s</DataType>
+      <DasType>varchar(1000)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
     <column id="393" parent="345" name="offer_text">
-      <DataType>varchar(100)|0s</DataType>
+      <DasType>varchar(100)|0s</DasType>
       <DefaultExpression>&apos;Sponsored&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
     <column id="394" parent="345" name="status">
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <DefaultExpression>1</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>9</Position>
     </column>
     <column id="395" parent="345" name="inserted_at">
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <NotNull>1</NotNull>
       <Position>10</Position>
     </column>
     <column id="396" parent="345" name="updated_at">
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>current_timestamp()</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>current_timestamp()</OnUpdate>
       <Position>11</Position>
     </column>
     <key id="397" parent="345" name="PRIMARY">
-      <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
+      <UnderlyingIndexColNames>id</UnderlyingIndexColNames>
     </key>
     <column id="398" parent="346" name="id">
-      <DataType>int(11)|0s</DataType>
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="399" parent="346" name="store_offer_id">
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="400" parent="346" name="count">
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="401" parent="346" name="ip">
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="402" parent="346" name="inserted_at">
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
     <key id="403" parent="346" name="PRIMARY">
-      <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
+      <UnderlyingIndexColNames>id</UnderlyingIndexColNames>
     </key>
     <column id="404" parent="347" name="id">
-      <DataType>int(11)|0s</DataType>
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="405" parent="347" name="store_id">
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="406" parent="347" name="rating">
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="407" parent="347" name="ip">
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="408" parent="347" name="inserted_at">
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>current_timestamp()</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>current_timestamp()</OnUpdate>
       <Position>5</Position>
     </column>
     <key id="409" parent="347" name="PRIMARY">
-      <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
+      <UnderlyingIndexColNames>id</UnderlyingIndexColNames>
     </key>
     <column id="410" parent="348" name="id">
-      <DataType>int(11)|0s</DataType>
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="411" parent="348" name="category_id">
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="412" parent="348" name="s_domain">
-      <DataType>varchar(250)|0s</DataType>
+      <DasType>varchar(250)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="413" parent="348" name="s_name">
-      <DataType>varchar(150)|0s</DataType>
+      <DasType>varchar(150)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="414" parent="348" name="meta_title">
-      <DataType>varchar(500)|0s</DataType>
+      <DasType>varchar(500)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
     <column id="415" parent="348" name="meta_description">
-      <DataType>varchar(1000)|0s</DataType>
+      <DasType>varchar(1000)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <column id="416" parent="348" name="meta_keyword">
-      <DataType>varchar(1000)|0s</DataType>
+      <DasType>varchar(1000)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
     <column id="417" parent="348" name="image">
-      <DataType>varchar(500)|0s</DataType>
+      <DasType>varchar(500)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
     <column id="418" parent="348" name="about">
-      <DataType>varchar(5000)|0s</DataType>
+      <DasType>varchar(5000)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>9</Position>
     </column>
     <column id="419" parent="348" name="annual">
-      <DataType>varchar(5000)|0s</DataType>
+      <DasType>varchar(5000)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>10</Position>
     </column>
     <column id="420" parent="348" name="status">
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <DefaultExpression>1</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>11</Position>
     </column>
     <column id="421" parent="348" name="inserted_at">
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <NotNull>1</NotNull>
       <Position>12</Position>
     </column>
     <column id="422" parent="348" name="updated_at">
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>current_timestamp()</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>current_timestamp()</OnUpdate>
       <Position>13</Position>
     </column>
     <key id="423" parent="348" name="PRIMARY">
-      <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
+      <UnderlyingIndexColNames>id</UnderlyingIndexColNames>
     </key>
     <column id="424" parent="349" name="id">
-      <DataType>int(11)|0s</DataType>
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="425" parent="349" name="store_id">
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="426" parent="349" name="offer_text">
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="427" parent="349" name="offer_submit_name">
-      <DataType>varchar(150)|0s</DataType>
+      <DasType>varchar(150)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="428" parent="349" name="title">
-      <DataType>varchar(250)|0s</DataType>
+      <DasType>varchar(250)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
     <column id="429" parent="349" name="details">
-      <DataType>varchar(1000)|0s</DataType>
+      <DasType>varchar(1000)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <column id="430" parent="349" name="code">
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
     <column id="431" parent="349" name="status">
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <DefaultExpression>1</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
     <column id="432" parent="349" name="inserted_at">
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <NotNull>1</NotNull>
       <Position>9</Position>
     </column>
     <column id="433" parent="349" name="updated_at">
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>current_timestamp()</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>current_timestamp()</OnUpdate>
       <Position>10</Position>
     </column>
     <key id="434" parent="349" name="PRIMARY">
-      <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
+      <UnderlyingIndexColNames>id</UnderlyingIndexColNames>
     </key>
     <column id="435" parent="350" name="id">
-      <DataType>int(11)|0s</DataType>
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="436" parent="350" name="title">
-      <DataType>varchar(150)|0s</DataType>
+      <DasType>varchar(150)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="437" parent="350" name="subtitle">
-      <DataType>varchar(200)|0s</DataType>
+      <DasType>varchar(200)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="438" parent="350" name="image">
-      <DataType>varchar(500)|0s</DataType>
+      <DasType>varchar(500)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="439" parent="350" name="t_link">
-      <DataType>varchar(1000)|0s</DataType>
+      <DasType>varchar(1000)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
     <column id="440" parent="350" name="status">
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <DefaultExpression>1</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <column id="441" parent="350" name="inserted_at">
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
     <column id="442" parent="350" name="updated_at">
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>current_timestamp()</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>current_timestamp()</OnUpdate>
       <Position>8</Position>
     </column>
     <key id="443" parent="350" name="PRIMARY">
-      <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
+      <UnderlyingIndexColNames>id</UnderlyingIndexColNames>
     </key>
   </database-model>
 </dataSource>
