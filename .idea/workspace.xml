@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cb97298-c149-4499-b18c-e621f7d8582d" name="Changes" comment="update store">
+    <list default="true" id="7cb97298-c149-4499-b18c-e621f7d8582d" name="Changes" comment="update all">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stores.php" beforeDir="false" afterPath="$PROJECT_DIR$/stores.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +80,7 @@
       <workItem from="1682057272509" duration="1345000" />
       <workItem from="1682082519856" duration="1562000" />
       <workItem from="1682137236259" duration="4173000" />
-      <workItem from="1682225382876" duration="11064000" />
+      <workItem from="1682225382876" duration="11457000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1668779396037</created>
@@ -312,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682238122987</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="update all">
+      <created>1682238690544</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1682238690544</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,7 +352,6 @@
     <MESSAGE value="profile done" />
     <MESSAGE value="solve sore offer delete" />
     <MESSAGE value="update admin" />
-    <MESSAGE value="update all" />
     <MESSAGE value="update from web" />
     <MESSAGE value="update home" />
     <MESSAGE value="update home and savings" />
@@ -353,6 +360,7 @@
     <MESSAGE value="blog details updated" />
     <MESSAGE value="add category" />
     <MESSAGE value="update store" />
-    <option name="LAST_COMMIT_MESSAGE" value="update store" />
+    <MESSAGE value="update all" />
+    <option name="LAST_COMMIT_MESSAGE" value="update all" />
   </component>
 </project>
