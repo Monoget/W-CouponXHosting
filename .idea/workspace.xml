@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cb97298-c149-4499-b18c-e621f7d8582d" name="Changes" comment="update from web">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="7cb97298-c149-4499-b18c-e621f7d8582d" name="Changes" comment="update home">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/include/footer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stores.php" beforeDir="false" afterPath="$PROJECT_DIR$/stores.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/savings.php" beforeDir="false" afterPath="$PROJECT_DIR$/savings.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +79,7 @@
       <workItem from="1682057272509" duration="1345000" />
       <workItem from="1682082519856" duration="1562000" />
       <workItem from="1682137236259" duration="4173000" />
-      <workItem from="1682225382876" duration="1382000" />
+      <workItem from="1682225382876" duration="2111000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1668779396037</created>
@@ -265,7 +263,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682058017151</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="update home">
+      <created>1682226846053</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1682226846053</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,6 +305,7 @@
     <MESSAGE value="update admin" />
     <MESSAGE value="update all" />
     <MESSAGE value="update from web" />
-    <option name="LAST_COMMIT_MESSAGE" value="update from web" />
+    <MESSAGE value="update home" />
+    <option name="LAST_COMMIT_MESSAGE" value="update home" />
   </component>
 </project>

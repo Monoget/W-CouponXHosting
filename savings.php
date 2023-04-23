@@ -58,7 +58,8 @@ $db_handle = new DBController();
 <!--Banner Start -->
 <section class="mb-5">
     <div class="container">
-        <p class="text-center"><small>When you buy through links on RetailMeNot <strong><u>we may earn a commission.</u></strong></small>
+        <p class="text-center"><small>When you buy through links on CouponXHosting <strong><u>we may earn a
+                        commission.</u></strong></small>
         </p>
         <div class="card bg-dark text-white">
             <div class="row">
@@ -89,96 +90,29 @@ $db_handle = new DBController();
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
+            <?php
+            $query = "SELECT * FROM offer,store where store.id=offer.store_id order by rand() limit 8";
+
+            $data = $db_handle->runQuery($query);
+            $row = $db_handle->numRows($query);
+            for ($j = 0; $j < $row; $j++) {
+                ?>
+                <div class="col-lg-3">
+                    <a class="text-decoration-none text-dark" href="Stores?domain=<?php echo $data[$j]["s_domain"]; ?>">
+                        <div class="card mt-3">
+                            <img class="card-img" src="<?php echo $data[$j]["image"]; ?>"
+                                 alt="a snow-capped mountain range"/>
+                            <div class="card-body" style="height: 250px">
+                                <h6 class="card-title"><?php echo $data[$j]["title"]; ?></h6>
+                                <p class="card-text"><?php echo $data[$j]["subtitle"]; ?></p>
+                                <p class="card-text mt-2"><?php echo $data[$j]["s_name"]; ?></p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
-                </div>
-            </div>
+                <?php
+            }
+            ?>
         </div>
     </div>
 </section>
@@ -200,50 +134,29 @@ $db_handle = new DBController();
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
+            <?php
+            $query = "SELECT * FROM offer,store where store.id=offer.store_id order by rand() limit 4";
+
+            $data = $db_handle->runQuery($query);
+            $row = $db_handle->numRows($query);
+            for ($j = 0; $j < $row; $j++) {
+                ?>
+                <div class="col-lg-3">
+                    <a class="text-decoration-none text-dark" href="Stores?domain=<?php echo $data[$j]["s_domain"]; ?>">
+                        <div class="card mt-3">
+                            <img class="card-img" src="<?php echo $data[$j]["image"]; ?>"
+                                 alt="a snow-capped mountain range"/>
+                            <div class="card-body" style="height: 250px">
+                                <h6 class="card-title"><?php echo $data[$j]["title"]; ?></h6>
+                                <p class="card-text"><?php echo $data[$j]["subtitle"]; ?></p>
+                                <p class="card-text mt-2"><?php echo $data[$j]["s_name"]; ?></p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
-                </div>
-            </div>
+                <?php
+            }
+            ?>
         </div>
     </div>
 </section>
@@ -258,48 +171,26 @@ $db_handle = new DBController();
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-2 col-6">
-                <div class="mt-3 d-flex justify-content-center">
-                    <div class="text-center">
-                        <img src="assets/images/alternative-logo/1.jpg" class="img-fluid alternative-logo" alt=""/>
-                    </div>
+
+            <?php
+            $query = "SELECT * FROM offer,store where store.id=offer.store_id order by rand() limit 6";
+
+            $data = $db_handle->runQuery($query);
+            $row = $db_handle->numRows($query);
+            for ($j = 0; $j < $row; $j++) {
+                ?>
+                <div class="col-lg-2 col-6">
+                    <a class="text-decoration-none text-dark" href="Stores?domain=<?php echo $data[$j]["s_domain"]; ?>">
+                        <div class="mt-3 d-flex justify-content-center">
+                            <div class="text-center">
+                                <img src="<?php echo $data[$j]["image"]; ?>" class="img-fluid alternative-logo" alt=""/>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </div>
-            <div class="col-lg-2 col-6">
-                <div class="mt-3 d-flex justify-content-center">
-                    <div class="text-center">
-                        <img src="assets/images/alternative-logo/2.jpg" class="img-fluid alternative-logo" alt=""/>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-6">
-                <div class="mt-3 d-flex justify-content-center">
-                    <div class="text-center">
-                        <img src="assets/images/alternative-logo/3.jpg" class="img-fluid alternative-logo" alt=""/>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-6">
-                <div class="mt-3 d-flex justify-content-center">
-                    <div class="text-center">
-                        <img src="assets/images/alternative-logo/4.jpg" class="img-fluid alternative-logo" alt=""/>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-6">
-                <div class="mt-3 d-flex justify-content-center">
-                    <div class="text-center">
-                        <img src="assets/images/alternative-logo/5.jpg" class="img-fluid alternative-logo" alt=""/>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-6">
-                <div class="mt-3 d-flex justify-content-center">
-                    <div class="text-center">
-                        <img src="assets/images/alternative-logo/6.jpg" class="img-fluid alternative-logo" alt=""/>
-                    </div>
-                </div>
-            </div>
+                <?php
+            }
+            ?>
         </div>
     </div>
 </section>
@@ -444,50 +335,29 @@ $db_handle = new DBController();
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
+            <?php
+            $query = "SELECT * FROM offer,store where store.id=offer.store_id order by rand() limit 4";
+
+            $data = $db_handle->runQuery($query);
+            $row = $db_handle->numRows($query);
+            for ($j = 0; $j < $row; $j++) {
+                ?>
+                <div class="col-lg-3">
+                    <a class="text-decoration-none text-dark" href="Stores?domain=<?php echo $data[$j]["s_domain"]; ?>">
+                        <div class="card mt-3">
+                            <img class="card-img" src="<?php echo $data[$j]["image"]; ?>"
+                                 alt="a snow-capped mountain range"/>
+                            <div class="card-body" style="height: 250px">
+                                <h6 class="card-title"><?php echo $data[$j]["title"]; ?></h6>
+                                <p class="card-text"><?php echo $data[$j]["subtitle"]; ?></p>
+                                <p class="card-text mt-2"><?php echo $data[$j]["s_name"]; ?></p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
-                </div>
-            </div>
+                <?php
+            }
+            ?>
         </div>
     </div>
 </section>
@@ -509,96 +379,29 @@ $db_handle = new DBController();
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
+            <?php
+            $query = "SELECT * FROM offer,store where store.id=offer.store_id order by rand() limit 8";
+
+            $data = $db_handle->runQuery($query);
+            $row = $db_handle->numRows($query);
+            for ($j = 0; $j < $row; $j++) {
+                ?>
+                <div class="col-lg-3">
+                    <a class="text-decoration-none text-dark" href="Stores?domain=<?php echo $data[$j]["s_domain"]; ?>">
+                        <div class="card mt-3">
+                            <img class="card-img" src="<?php echo $data[$j]["image"]; ?>"
+                                 alt="a snow-capped mountain range"/>
+                            <div class="card-body" style="height: 250px">
+                                <h6 class="card-title"><?php echo $data[$j]["title"]; ?></h6>
+                                <p class="card-text"><?php echo $data[$j]["subtitle"]; ?></p>
+                                <p class="card-text mt-2"><?php echo $data[$j]["s_name"]; ?></p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
-                </div>
-            </div>
+                <?php
+            }
+            ?>
         </div>
     </div>
 </section>
@@ -620,50 +423,29 @@ $db_handle = new DBController();
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
+            <?php
+            $query = "SELECT * FROM offer,store where store.id=offer.store_id order by rand() limit 4";
+
+            $data = $db_handle->runQuery($query);
+            $row = $db_handle->numRows($query);
+            for ($j = 0; $j < $row; $j++) {
+                ?>
+                <div class="col-lg-3">
+                    <a class="text-decoration-none text-dark" href="Stores?domain=<?php echo $data[$j]["s_domain"]; ?>">
+                        <div class="card mt-3">
+                            <img class="card-img" src="<?php echo $data[$j]["image"]; ?>"
+                                 alt="a snow-capped mountain range"/>
+                            <div class="card-body" style="height: 250px">
+                                <h6 class="card-title"><?php echo $data[$j]["title"]; ?></h6>
+                                <p class="card-text"><?php echo $data[$j]["subtitle"]; ?></p>
+                                <p class="card-text mt-2"><?php echo $data[$j]["s_name"]; ?></p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
-                </div>
-            </div>
+                <?php
+            }
+            ?>
         </div>
     </div>
 </section>

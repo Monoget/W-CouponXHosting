@@ -79,15 +79,17 @@ $db_handle = new DBController();
             for ($j = 0; $j < $row; $j++) {
             ?>
             <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="<?php echo $data[$j]["image"]; ?>"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body" style="height: 250px">
-                        <h6 class="card-title"><?php echo $data[$j]["title"]; ?></h6>
-                        <p class="card-text"><?php echo $data[$j]["subtitle"]; ?></p>
-                        <p class="card-text mt-2"><?php echo $data[$j]["s_name"]; ?></p>
+                <a class="text-decoration-none text-dark" href="Stores?domain=<?php echo $data[$j]["s_domain"]; ?>">
+                    <div class="card mt-3">
+                        <img class="card-img" src="<?php echo $data[$j]["image"]; ?>"
+                             alt="a snow-capped mountain range"/>
+                        <div class="card-body" style="height: 250px">
+                            <h6 class="card-title"><?php echo $data[$j]["title"]; ?></h6>
+                            <p class="card-text"><?php echo $data[$j]["subtitle"]; ?></p>
+                            <p class="card-text mt-2"><?php echo $data[$j]["s_name"]; ?></p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <?php
             }
