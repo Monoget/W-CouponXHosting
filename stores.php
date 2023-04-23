@@ -103,7 +103,7 @@ if (isset($_GET['domain'])) {
             </div>
             <div class="col-lg-9">
                 <div class="row">
-                    <div class="col-lg-9 mt-2">
+                    <div class="col-lg-12 mt-2">
                         <h1><?php echo $page_store_data[0]["s_name"]; ?> Coupons & Promo Codes </h1>
                         <ul class="nav">
                             <li class="nav-item">
@@ -122,31 +122,51 @@ if (isset($_GET['domain'])) {
                             </li>
                         </ul>
                     </div>
-                    <div class="col-lg-3 mt-4">
+                    <!--<div class="col-lg-3 mt-4">
                         <a href="#" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
                                     class="fa-solid fa-tag"></i> Submit a Coupon</a>
-                    </div>
+                    </div>-->
                     <?php
+
+                    if (isset($_GET['page_no']) && $_GET['page_no']!="") {
+                        $page_no = $_GET['page_no'];
+                    } else {
+                        $page_no = 1;
+                    }
+
+                    $total_records_per_page = 7;
+                    $offset = ($page_no-1) * $total_records_per_page;
+                    $previous_page = $page_no - 1;
+                    $next_page = $page_no + 1;
+                    $adjacents = "2";
+
+                    $row = $db_handle->numRows("SELECT * FROM offer where category_id={$id} and store_id={$store_id} and status=1 order by id desc");
+
+                    $total_no_of_pages = ceil($row / $total_records_per_page);
+                    $second_last = $total_no_of_pages - 1; // total page minus 1
+
                     $id = $page_store_data[0]["category_id"];
 
-                    $data = $db_handle->runQuery("SELECT * FROM offer where category_id={$id} and store_id={$store_id} and status=1 order by id desc");
-                    $row = $db_handle->numRows("SELECT * FROM offer where category_id={$id} and store_id={$store_id} and status=1 order by id desc");
+                    $query="SELECT * FROM offer where category_id={$id} and store_id={$store_id} and status=1 order by id desc LIMIT $offset, $total_records_per_page";
+
+                    $data = $db_handle->runQuery($query);
+                    $row = $db_handle->numRows($query);
                     for ($j = 0; $j < $row; $j++) {
                     ?>
                     <div class="col-lg-12 mt-3">
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-lg-2 col-3 text-center p-3">
+                                    <div class="col-lg-3 col-3 text-center p-3">
                                         <h2>
                                             <?php echo $data[$j]["title"]; ?>
                                         </h2>
                                     </div>
-                                    <div class="col-lg-10 col-9">
+                                    <div class="col-lg-9 col-9">
                                         <div class="row pt-5">
                                             <div class="col-10">
                                                 <h5><?php echo $data[$j]["subtitle"]; ?></h5>
-                                                <p>Added by kimeeb . 579 uses today</p>
+                                                <!--<p>Added by kimeeb . 579 uses today</p>-->
                                             </div>
                                             <div class="col-lg-2 pe-2">
                                                 <a href="<?php echo $data[$j]["o_link"]; ?>" class="btn btn-primary">Get Deal</a>
@@ -168,8 +188,86 @@ if (isset($_GET['domain'])) {
                             </div>
                         </div>
                     </div>
-                    <?php } ?>
+                    <?php }
 
+                    $domain=$_GET["domain"];
+                    ?>
+
+                    <div class="col-lg-12 mt-5">
+
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item" <?php if($page_no <= 1){ echo "class='disabled'"; } ?>>
+                                    <a class="page-link" <?php if($page_no > 1){ echo "href='?domain=$domain&page_no=$previous_page'"; } ?>>
+                                        Previous
+                                    </a>
+                                </li>
+                                <?php
+
+                                if ($total_no_of_pages <= 10){
+                                    for ($counter = 1; $counter <= $total_no_of_pages; $counter++){
+                                        if ($counter == $page_no) {
+                                            echo "<li class='page-item active'><a class='page-link'>$counter</a></li>";
+                                        }else{
+                                            echo "<li class='page-item'><a class='page-link' href='?domain=$domain&page_no=$counter'>$counter</a></li>";
+                                        }
+                                    }
+                                }
+
+                                elseif($total_no_of_pages > 10){
+
+                                    if($page_no <= 4) {
+                                        for ($counter = 1; $counter < 8; $counter++){
+                                            if ($counter == $page_no) {
+                                                echo "<li class='page-item active'><a class='page-link'>$counter</a></li>";
+                                            }else{
+                                                echo "<li class='page-item'><a class='page-link' href='?domain=$domain&page_no=$counter'>$counter</a></li>";
+                                            }
+                                        }
+                                        echo "<li class='page-item'><a class='page-link'>...</a></li>";
+                                        echo "<li class='page-item'><a class='page-link' href='?domain=$domain&page_no=$second_last'>$second_last</a></li>";
+                                        echo "<li class='page-item'><a class='page-link' href='?domain=$domain&page_no=$total_no_of_pages'>$total_no_of_pages</a></li>";
+                                    }
+
+                                    elseif($page_no > 4 && $page_no < $total_no_of_pages - 4) {
+                                        echo "<li class='page-item'><a class='page-link' href='?domain=$domain&page_no=1'>1</a></li>";
+                                        echo "<li class='page-item'><a class='page-link' href='?domain=$domain&page_no=2'>2</a></li>";
+                                        echo "<li class='page-item'><a class='page-link'>...</a></li>";
+                                        for ($counter = $page_no - $adjacents; $counter <= $page_no + $adjacents; $counter++) {
+                                            if ($counter == $page_no) {
+                                                echo "<li class='page-item active'><a class='page-link'>$counter</a></li>";
+                                            }else{
+                                                echo "<li class='page-item'><a class='page-link' href='?domain=$domain&page_no=$counter'>$counter</a></li>";
+                                            }
+                                        }
+                                        echo "<li class='page-item'><a class='page-link'>...</a></li>";
+                                        echo "<li class='page-item'><a class='page-link' href='?domain=$domain&page_no=$second_last'>$second_last</a></li>";
+                                        echo "<li><a href='?domain=$domain&page_no=$total_no_of_pages'>$total_no_of_pages</a></li>";
+                                    }
+
+                                    else {
+                                        echo "<li class='page-item'><a class='page-link' href='?domain=$domain&page_no=1'>1</a></li>";
+                                        echo "<li class='page-item'><a class='page-link' href='?domain=$domain&page_no=2'>2</a></li>";
+                                        echo "<li class='page-item'><a class='page-link'>...</a></li>";
+
+                                        for ($counter = $total_no_of_pages - 6; $counter <= $total_no_of_pages; $counter++) {
+                                            if ($counter == $page_no) {
+                                                echo "<li class='page-item active'><a class='page-link'>$counter</a></li>";
+                                            }else{
+                                                echo "<li class='page-item'><a class='page-link' href='?domain=$domain&page_no=$counter'>$counter</a></li>";
+                                            }
+                                        }
+                                    }
+                                }
+                                ?>
+                                <li class="page-item" <?php if($page_no >= $total_no_of_pages){ echo "class='disabled'"; } ?>>
+                                    <a class="page-link" <?php if($page_no < $total_no_of_pages) { echo "href='?domain=$domain&page_no=$next_page'"; } ?>>
+                                        Next
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
             </div>
         </div>

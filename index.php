@@ -71,96 +71,27 @@ $db_handle = new DBController();
             </div>
         </div>
         <div class="row">
+            <?php
+            $query="SELECT * FROM offer,store where store.id=offer.store_id order by rand() limit 8";
+
+            $data = $db_handle->runQuery($query);
+            $row = $db_handle->numRows($query);
+            for ($j = 0; $j < $row; $j++) {
+            ?>
             <div class="col-lg-3">
                 <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
+                    <img class="card-img" src="<?php echo $data[$j]["image"]; ?>"
                          alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
+                    <div class="card-body" style="height: 250px">
+                        <h6 class="card-title"><?php echo $data[$j]["title"]; ?></h6>
+                        <p class="card-text"><?php echo $data[$j]["subtitle"]; ?></p>
+                        <p class="card-text mt-2"><?php echo $data[$j]["s_name"]; ?></p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card mt-3">
-                    <img class="card-img" src="https://assets.codepen.io/6093409/mountains-3.jpg"
-                         alt="a snow-capped mountain range"/>
-                    <div class="card-body">
-                        <h6 class="card-title">SALE</h6>
-                        <p class="card-text">Long Sleeves for $10, Sweatshirts for $20 + More</p>
-                        <p class="card-text mt-2">Sponsored</p>
-                    </div>
-                </div>
-            </div>
+            <?php
+            }
+            ?>
         </div>
     </div>
 </section>
@@ -175,37 +106,20 @@ $db_handle = new DBController();
                 <h4 class="text-center">Popular Stores</h4>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-2 mt-3">
-                <p><small>Store</small></p>
-                <p><small>Store</small></p>
-                <p><small>Store</small></p>
+        <div class="row mt-3">
+            <?php
+            $query="SELECT * FROM store order by rand() limit 18";
+
+            $data = $db_handle->runQuery($query);
+            $row = $db_handle->numRows($query);
+            for ($j = 0; $j < $row; $j++) {
+            ?>
+            <div class="col-lg-2">
+                <a class="text-decoration-none text-dark" href="Stores?domain=<?php echo $data[$j]["s_domain"]; ?>"><p><small><?php echo $data[$j]["s_name"]; ?></small></p></a>
             </div>
-            <div class="col-lg-2 mt-3">
-                <p><small>Store</small></p>
-                <p><small>Store</small></p>
-                <p><small>Store</small></p>
-            </div>
-            <div class="col-lg-2 mt-3">
-                <p><small>Store</small></p>
-                <p><small>Store</small></p>
-                <p><small>Store</small></p>
-            </div>
-            <div class="col-lg-2 mt-3">
-                <p><small>Store</small></p>
-                <p><small>Store</small></p>
-                <p><small>Store</small></p>
-            </div>
-            <div class="col-lg-2 mt-3">
-                <p><small>Store</small></p>
-                <p><small>Store</small></p>
-                <p><small>Store</small></p>
-            </div>
-            <div class="col-lg-2 mt-3">
-                <p><small>Store</small></p>
-                <p><small>Store</small></p>
-                <p><small>Store</small></p>
-            </div>
+                <?php
+            }
+            ?>
         </div>
     </div>
     <hr/>
@@ -221,36 +135,19 @@ $db_handle = new DBController();
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-2 mt-3">
-                <p><small>Category</small></p>
-                <p><small>Category</small></p>
-                <p><small>Category</small></p>
-            </div>
-            <div class="col-lg-2 mt-3">
-                <p><small>Category</small></p>
-                <p><small>Category</small></p>
-                <p><small>Category</small></p>
-            </div>
-            <div class="col-lg-2 mt-3">
-                <p><small>Category</small></p>
-                <p><small>Category</small></p>
-                <p><small>Category</small></p>
-            </div>
-            <div class="col-lg-2 mt-3">
-                <p><small>Category</small></p>
-                <p><small>Category</small></p>
-                <p><small>Category</small></p>
-            </div>
-            <div class="col-lg-2 mt-3">
-                <p><small>Category</small></p>
-                <p><small>Category</small></p>
-                <p><small>Category</small></p>
-            </div>
-            <div class="col-lg-2 mt-3">
-                <p><small>Category</small></p>
-                <p><small>Category</small></p>
-                <p><small>Category</small></p>
-            </div>
+            <?php
+            $query="SELECT * FROM category order by rand() limit 18";
+
+            $data = $db_handle->runQuery($query);
+            $row = $db_handle->numRows($query);
+            for ($j = 0; $j < $row; $j++) {
+                ?>
+                <div class="col-lg-2">
+                    <a class="text-decoration-none text-dark" href="Category?category_id=<?php echo $data[$j]["id"]; ?>"><p><small><?php echo $data[$j]["c_name"]; ?></small></p></a>
+                </div>
+                <?php
+            }
+            ?>
         </div>
     </div>
 </section>

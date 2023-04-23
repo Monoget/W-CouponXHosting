@@ -7,25 +7,22 @@
                     <img src="assets/images/logo/logo-black.png" class="img-fluid" alt=""/>
                 </div>
             </div>
-            <div class="col-lg-2 mt-3">
-                <p><small><strong>Category</strong></small></p>
-                <p><small>Category</small></p>
-                <p><small>Category</small></p>
-            </div>
-            <div class="col-lg-2 mt-3">
-                <p><small><strong>Category</strong></small></p>
-                <p><small>Category</small></p>
-                <p><small>Category</small></p>
-            </div>
-            <div class="col-lg-2 mt-3">
-                <p><small><strong>Category</strong></small></p>
-                <p><small>Category</small></p>
-                <p><small>Category</small></p>
-            </div>
-            <div class="col-lg-2 mt-3">
-                <p><small><strong>Category</strong></small></p>
-                <p><small>Category</small></p>
-                <p><small>Category</small></p>
+            <div class="col-lg-8 mt-3">
+                <div class="row">
+                    <?php
+                    $query="SELECT * FROM category order by rand() limit 18";
+
+                    $data = $db_handle->runQuery($query);
+                    $row = $db_handle->numRows($query);
+                    for ($j = 0; $j < $row; $j++) {
+                        ?>
+                        <div class="col-lg-3">
+                            <a class="text-decoration-none text-dark" href="Category?category_id=<?php echo $data[$j]["id"]; ?>"><p><small><?php echo $data[$j]["c_name"]; ?></small></p></a>
+                        </div>
+                        <?php
+                    }
+                    ?>
+                </div>
             </div>
         </div>
         <div class="row mt-4">
@@ -35,16 +32,13 @@
             <div class="col-lg-10">
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Active</a>
+                        <a class="nav-link active" aria-current="page" href="#">Terms and Condition</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="#">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        <a class="nav-link" href="#">Privacy Policy</a>
                     </li>
                 </ul>
                 <p class="text-center">
