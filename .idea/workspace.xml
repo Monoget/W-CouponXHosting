@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cb97298-c149-4499-b18c-e621f7d8582d" name="Changes" comment="update offer">
+    <list default="true" id="7cb97298-c149-4499-b18c-e621f7d8582d" name="Changes" comment="blog update">
+      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/add-blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add-blog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/blog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/error_log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,20 +35,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/xampp/htdocs/W-CouponXHosting",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\W-CouponXHosting" />
       <recent name="C:\xampp\htdocs\W-CouponXHosting\db" />
       <recent name="C:\xampp\htdocs\W-CouponXHosting\assets\images\admin" />
       <recent name="C:\xampp\htdocs\W-CouponXHosting\admin" />
@@ -78,7 +84,7 @@
       <workItem from="1682057272509" duration="1345000" />
       <workItem from="1682082519856" duration="1562000" />
       <workItem from="1682137236259" duration="4173000" />
-      <workItem from="1682225382876" duration="6471000" />
+      <workItem from="1682225382876" duration="9259000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1668779396037</created>
@@ -283,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682229232353</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="blog update">
+      <created>1682233724711</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1682233724711</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,6 +333,7 @@
     <MESSAGE value="update home" />
     <MESSAGE value="update home and savings" />
     <MESSAGE value="update offer" />
-    <option name="LAST_COMMIT_MESSAGE" value="update offer" />
+    <MESSAGE value="blog update" />
+    <option name="LAST_COMMIT_MESSAGE" value="blog update" />
   </component>
 </project>

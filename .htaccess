@@ -1,11 +1,13 @@
 RewriteEngine on
 
-RewriteRule ^Home index.php [NC,L]
+RewriteRule ^Home index.php [NE,L]
 
-RewriteRule ^Blog blog.php [NC,L]
+RewriteRule ^Blog\-Details blog-details.php [NE,L]
 
-RewriteRule ^Offer offer.php [NC,L]
+RewriteRule ^Blog blog.php [NE,L]
 
-RewriteRule ^Savings savings.php [NC,L]
+RewriteRule ^Offer offer.php [NE,L]
 
-RewriteRule ^Stores stores.php [NC,L]
+RewriteRule ^Savings savings.php [NE,L]
+
+RewriteRule ^Stores stores.php [NE,L]

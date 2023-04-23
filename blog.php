@@ -36,7 +36,12 @@ $db_handle = new DBController();
 
 <main class="container">
     <?php
-    $query="SELECT * FROM blog order by id desc limit 1";
+    $category='';
+    if(isset($_GET['category_id'])){
+        $category=" where blog.blog_cate_id=".$_GET['category_id'];
+    }
+
+    $query="SELECT * FROM blog".$category." order by id desc limit 1";
 
     $data = $db_handle->runQuery($query);
     $row = $db_handle->numRows($query);
@@ -59,7 +64,12 @@ $db_handle = new DBController();
     ?>
     <div class="row">
         <?php
-        $query="SELECT * FROM blog,blog_category where blog.blog_cate_id=blog_category.id order by rand() desc limit 8";
+        if(isset($_GET['category_id'])){
+            $category=" and blog.blog_cate_id=".$_GET['category_id'];
+        }
+
+
+        $query="SELECT * FROM blog,blog_category where blog.blog_cate_id=blog_category.id".$category." order by rand() limit 8";
 
         $data = $db_handle->runQuery($query);
         $row = $db_handle->numRows($query);

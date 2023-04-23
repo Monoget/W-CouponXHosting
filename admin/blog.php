@@ -23,7 +23,6 @@ $db_handle = new DBController();
     <title>Blog | CouponXHosting</title>
 
     <?php require_once('include/css.php'); ?>
-
 </head>
 <body>
 
@@ -140,7 +139,7 @@ $db_handle = new DBController();
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Description</label>
                                             <div class="col-sm-9">
-                                                <textarea class="form-control" name="description" style="height: 100px" placeholder="Type your description..." required><?php echo $data[0]["description"]; ?></textarea>
+                                                <textarea class="form-control" id="comment" name="description" style="height: 100px" placeholder="Type your description..." required><?php echo $data[0]["description"]; ?></textarea>
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
@@ -347,6 +346,10 @@ $db_handle = new DBController();
             }
         })
     }
+</script>
+<script src='https://cdn.ckeditor.com/ckeditor5/28.0.0/classic/ckeditor.js'></script>
+<script>
+    ClassicEditor.create(document.querySelector("#comment"));
 </script>
 </body>
 </html>
