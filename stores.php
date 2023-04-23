@@ -42,7 +42,13 @@ if (isset($_GET['domain'])) {
                          alt="a snow-capped mountain range"/>
                 </div>
                 <p>When you buy through links on CouponXHosting <u>we may earn a commission.</u></p>
-                <h6>50 Offers Available</h6>
+                <h6>
+                    <?php
+                    $row = $db_handle->numRows("SELECT * FROM offer where store_id={$store_id} and status=1");
+                    echo $row;
+                    ?>
+                    Offers Available
+                </h6>
                 <p class="mt-2">Sponsored</p>
                 <hr/>
                 <div class="d-md-block d-none">
