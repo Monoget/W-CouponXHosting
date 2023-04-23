@@ -27,7 +27,7 @@
                                 for ($i = 0; $i < $row_count; $i++) {
                                     ?>
                                     <li class="dropdown-submenu">
-                                        <a href="#" class="dropdown-item dropdown-toggle"
+                                        <a href="Category?category_id=<?php echo $category_data[$i]["id"]; ?>" class="dropdown-item dropdown-toggle"
                                            data-toggle="dropdown"><?php echo $category_data[$i]["c_name"]; ?></a>
                                         <ul class="dropdown-menu">
                                             <?php

@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cb97298-c149-4499-b18c-e621f7d8582d" name="Changes" comment="blog update">
+    <list default="true" id="7cb97298-c149-4499-b18c-e621f7d8582d" name="Changes" comment="blog details updated">
       <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/add-blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add-blog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/blog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/error_log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/include/menu.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +81,7 @@
       <workItem from="1682057272509" duration="1345000" />
       <workItem from="1682082519856" duration="1562000" />
       <workItem from="1682137236259" duration="4173000" />
-      <workItem from="1682225382876" duration="9259000" />
+      <workItem from="1682225382876" duration="10610000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1668779396037</created>
@@ -296,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682233724711</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="blog details updated">
+      <created>1682236513524</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1682236513524</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,6 +338,7 @@
     <MESSAGE value="update home and savings" />
     <MESSAGE value="update offer" />
     <MESSAGE value="blog update" />
-    <option name="LAST_COMMIT_MESSAGE" value="blog update" />
+    <MESSAGE value="blog details updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="blog details updated" />
   </component>
 </project>

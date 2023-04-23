@@ -2,6 +2,8 @@ RewriteEngine on
 
 RewriteRule ^Home index.php [NE,L]
 
+RewriteRule ^Category category.php [NE,L]
+
 RewriteRule ^Blog\-Details blog-details.php [NE,L]
 
 RewriteRule ^Blog blog.php [NE,L]
