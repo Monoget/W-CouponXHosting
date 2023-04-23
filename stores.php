@@ -175,7 +175,7 @@ if (isset($_GET['domain'])) {
                                                 <!--<p>Added by kimeeb . 579 uses today</p>-->
                                             </div>
                                             <div class="col-lg-2 pe-2">
-                                                <a href="<?php echo $data[$j]["o_link"]; ?>" class="btn btn-primary">Get Deal</a>
+                                                <a href="<?php echo $data[$j]["o_link"]; ?>" target="_blank" class="btn btn-primary">Get Deal</a>
                                             </div>
                                         </div>
                                     </div>
