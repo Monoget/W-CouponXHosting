@@ -208,9 +208,14 @@ if (isset($_POST['updateStoreOffer'])) {
 if (isset($_POST['updateBlogCategory'])) {
     $id = $db_handle->checkValue($_POST['id']);
     $name = $db_handle->checkValue($_POST['bc_name']);
+
+    $meta_title = $db_handle->checkValue($_POST['meta_title']);
+
+    $meta_description = $db_handle->checkValue($_POST['meta_description']);
+
     $status = $db_handle->checkValue($_POST['status']);
 
-    $update = $db_handle->insertQuery("update blog_category set bc_name='$name', status='$status' where id='{$id}'");
+    $update = $db_handle->insertQuery("update blog_category set bc_name='$name',`meta_title`='$meta_title',`meta_description`='$meta_description', status='$status' where id='{$id}'");
 
     echo "<script>
                 document.cookie = 'alert = 3;';
@@ -225,6 +230,10 @@ if (isset($_POST['updateBlog'])) {
     $blog_cate_id = $db_handle->checkValue($_POST['blog_cate_id']);
 
     $title = $db_handle->checkValue($_POST['title']);
+
+    $meta_title = $db_handle->checkValue($_POST['meta_title']);
+
+    $meta_description = $db_handle->checkValue($_POST['meta_description']);
 
     $description = $db_handle->checkValue($_POST['description']);
 
@@ -256,7 +265,7 @@ if (isset($_POST['updateBlog'])) {
 
     $status = $db_handle->checkValue($_POST['status']);
 
-    $update = $db_handle->insertQuery("UPDATE `blog` SET `blog_cate_id`='$blog_cate_id',`title`='$title',`description`='$description'".$query.",`status`='$status' WHERE `id`='{$id}'");
+    $update = $db_handle->insertQuery("UPDATE `blog` SET `blog_cate_id`='$blog_cate_id',`title`='$title',`meta_title`='$meta_title',`meta_description`='$meta_description',`description`='$description'".$query.",`status`='$status' WHERE `id`='{$id}'");
 
     echo "<script>
                 document.cookie = 'alert = 3;';
@@ -305,7 +314,7 @@ if (isset($_POST['updateProfile'])) {
 
 }
 
-if (isset($_POST['updateBlogCategory'])) {
+if (isset($_POST['updatePassword'])) {
     $id = $db_handle->checkValue($_POST['id']);
     $old_pwd = $db_handle->checkValue($_POST['old_pwd']);
     $new_pwd = $db_handle->checkValue($_POST['new_pwd']);

@@ -31,35 +31,38 @@ $db_handle = new DBController();
 
     $description='';
     $image='';
+    $meta_title='';
+    $meta_description='';
     if (!isset($title)) {
         echo "<script>
                 window.location.href='../Blog';
                 </script>";
     } else {
 
-        $query = "SELECT * FROM blog,blog_category where blog.blog_cate_id=blog_category.id and blog.title='$string'";
+        $query = "SELECT * FROM blog_category,blog where blog.blog_cate_id=blog_category.id and blog.title='$string'";
 
         $data = $db_handle->runQuery($query);
         $row = $db_handle->numRows($query);
         for ($j = 0; $j < $row; $j++) {
             $image=$data[$j]["image"];
             $description=$data[$j]["description"];
+            $meta_title=$data[$j]["meta_title"];
+            $meta_description=$data[$j]["meta_description"];
         }
     }
     ?>
-    <meta name="description" content="<?php echo substr($string, 0, 155); ?>">
+    <meta name="description" content="<?php echo substr($meta_description, 0, 155); ?>">
     <meta name="keywords" content="CouponXHosting">
     <meta name="author" content="CouponXHosting">
 
-    <meta property="og:title" content="<?php echo $string; ?>" />
-    <meta property="og:description" content="<?php echo substr($string, 0, 155); ?>" />
+    <meta property="og:title" content="<?php echo $meta_title; ?>"/>
+    <meta property="og:description" content="<?php echo substr($meta_description, 0, 155); ?>" />
     <meta content="http://couponxhosting.com/<?php echo $image; ?>" property="og:image"/>
-    <meta content="<?php echo $string; ?>" property="og:image:alt"/>
-    <meta content="<?php echo $string; ?>" property="og:description"/>
+    <meta content="<?php echo $meta_title; ?>" property="og:image:alt"/>
     <meta content="https://couponxhosting.com/" property="og:url"/>
     <meta content="website" property="og:type"/>
 
-    <title><?php echo $string; ?> - CouponXHosting</title>
+    <title><?php echo $meta_title; ?> - CouponXHosting</title>
 </head>
 <body>
 <!-- NAV Start -->

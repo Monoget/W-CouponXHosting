@@ -128,6 +128,18 @@ $db_handle = new DBController();
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label">Meta Title</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="meta_title" placeholder="Meta Title" required>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label">Meta Description</label>
+                                        <div class="col-sm-9">
+                                            <textarea class="form-control" name="meta_description" style="height: 100px" placeholder="Type your meta description..." required></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Description</label>
                                         <div class="col-sm-9">
                                             <textarea class="form-control" id="comment" rows="5" name="description" placeholder="Type your description..." required></textarea>

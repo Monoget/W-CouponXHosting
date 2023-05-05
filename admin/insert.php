@@ -186,9 +186,13 @@ if (isset($_POST["addStoreOffer"])) {
 if (isset($_POST["addBlogCategory"])) {
     $name = $db_handle->checkValue($_POST['bc_name']);
 
+    $meta_title = $db_handle->checkValue($_POST['meta_title']);
+
+    $meta_description = $db_handle->checkValue($_POST['meta_description']);
+
     $inserted_at = date("Y-m-d H:i:s");
 
-    $insert = $db_handle->insertQuery("INSERT INTO `blog_category`(`bc_name`,  `inserted_at`) VALUES ('$name','$inserted_at')");
+    $insert = $db_handle->insertQuery("INSERT INTO `blog_category`(`bc_name`, `meta_title`, `meta_description`, `inserted_at`) VALUES ('$name','$meta_title','$meta_description','$inserted_at')");
 
     echo "<script>
                 document.cookie = 'alert = 3;';
@@ -200,6 +204,10 @@ if (isset($_POST["addBlog"])) {
     $blog_cate_id = $db_handle->checkValue($_POST['blog_cate_id']);
 
     $title= $db_handle->checkValue($_POST['title']);
+
+    $meta_title = $db_handle->checkValue($_POST['meta_title']);
+
+    $meta_description = $db_handle->checkValue($_POST['meta_description']);
 
     $description = $db_handle->checkValue($_POST['description']);
 
@@ -226,7 +234,7 @@ if (isset($_POST["addBlog"])) {
     $inserted_at = date("Y-m-d H:i:s");
 
 
-    $insert = $db_handle->insertQuery("INSERT INTO `blog`(`blog_cate_id`, `title`, `description`, `image`, `inserted_at`) VALUES ('$blog_cate_id','$title','$description','$image','$inserted_at')");
+    $insert = $db_handle->insertQuery("INSERT INTO `blog`(`blog_cate_id`, `title`, `meta_title`, `meta_description`,`description`, `image`, `inserted_at`) VALUES ('$blog_cate_id','$title','$meta_title','$meta_description','$description','$image','$inserted_at')");
 
     echo "<script>
                 document.cookie = 'alert = 3;';

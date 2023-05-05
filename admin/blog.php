@@ -137,6 +137,18 @@ $db_handle = new DBController();
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Meta Title</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" value="<?php echo $data[0]["meta_title"]; ?>" name="meta_title" placeholder="Meta Title" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Meta Description</label>
+                                            <div class="col-sm-9">
+                                                <textarea class="form-control" name="meta_description" style="height: 100px" placeholder="Type your meta description..." required><?php echo $data[0]["meta_description"]; ?></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Description</label>
                                             <div class="col-sm-9">
                                                 <textarea class="form-control" id="comment" name="description" style="height: 100px" placeholder="Type your description..." required><?php echo $data[0]["description"]; ?></textarea>
@@ -193,6 +205,8 @@ $db_handle = new DBController();
                                             <th>SL</th>
                                             <th>Blog Category</th>
                                             <th>Title</th>
+                                            <th>Meta Title</th>
+                                            <th>Meta Description</th>
                                             <th>Description</th>
                                             <th>Image</th>
                                             <th>Status</th>
@@ -215,6 +229,8 @@ $db_handle = new DBController();
                                                     ?>
                                                 </td>
                                                 <td><?php echo $data[$i]["title"]; ?></td>
+                                                <td><?php echo $data[$i]["meta_title"]; ?></td>
+                                                <td><?php echo $data[$i]["meta_description"]; ?></td>
                                                 <td><?php echo $data[$i]["description"]; ?></td>
                                                 <td>
                                                     <a href="../<?php echo $data[$i]["image"]; ?>" target="_blank">

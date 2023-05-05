@@ -18,6 +18,8 @@ $db_handle = new DBController();
 
     $extension='../';
     $bcName='';
+    $meta_title='';
+    $meta_description='';
     if ($title=='Blog') {
         $extension='';
     } else {
@@ -28,6 +30,8 @@ $db_handle = new DBController();
         $row = $db_handle->numRows($query);
         for ($j = 0; $j < $row; $j++) {
             $bcName=$data[$j]["bc_name"];
+            $meta_title=$data[$j]["meta_title"];
+            $meta_description=$data[$j]["meta_description"];
         }
 
         if($row==0){
@@ -37,6 +41,7 @@ $db_handle = new DBController();
         }
     }
     ?>
+
 
     <!-- Bootstrap CSS -->
     <link href="<?php echo $extension; ?>assets/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
@@ -52,7 +57,15 @@ $db_handle = new DBController();
 
     <link rel="icon" type="image/x-icon" href="<?php echo $extension; ?>assets/images/logo/favicon.png">
 
-    <title><?php echo $bcName; ?> Blog - CouponXHosting</title>
+    <title><?php echo $meta_title; ?> Blog - CouponXHosting</title>
+
+    <meta name="description" content="<?php echo substr($meta_description, 0, 155); ?>"/>
+    <meta property="og:title" content="<?php echo $meta_title; ?>"/>
+    <meta property="og:description" content="<?php echo substr($meta_description, 0, 155); ?>" />
+    <meta name="keywords" content="CouponXHosting">
+    <meta name="author" content="CouponXHosting">
+    <meta content="https://couponxhosting.com/" property="og:url"/>
+    <meta content="website" property="og:type"/>
 </head>
 <body>
 <!-- NAV Start -->

@@ -119,6 +119,18 @@ $db_handle = new DBController();
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Meta Title</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" value="<?php echo $data[0]["meta_title"]; ?>" name="meta_title" placeholder="Meta Title" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Meta Description</label>
+                                            <div class="col-sm-9">
+                                                <textarea class="form-control" name="meta_description" style="height: 100px" placeholder="Type your meta description..." required><?php echo $data[0]["meta_description"]; ?></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Status</label>
                                             <div class="col-sm-9">
                                                 <select class="default-select  form-control wide" name="status" required>
@@ -156,6 +168,8 @@ $db_handle = new DBController();
                                         <tr>
                                             <th>SL</th>
                                             <th>Blog Category Name</th>
+                                            <th>Meta Title</th>
+                                            <th>Meta Description</th>
                                             <th>Status</th>
                                             <th>Blog</th>
                                             <th>Action</th>
@@ -171,6 +185,8 @@ $db_handle = new DBController();
                                             <tr>
                                                 <td><?php echo $i + 1; ?></td>
                                                 <td><?php echo $category_data[$i]["bc_name"]; ?></td>
+                                                <td><?php echo $category_data[$i]["meta_title"]; ?></td>
+                                                <td><?php echo $category_data[$i]["meta_description"]; ?></td>
                                                 <td>
                                                     <?php
                                                     if ($category_data[$i]["status"] == 0) {
