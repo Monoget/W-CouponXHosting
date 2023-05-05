@@ -53,7 +53,10 @@ $db_handle = new DBController();
             <p class="lead my-3">
                 <?php echo substr($data[$j]["description"],0,142).'...'; ?>
             </p>
-            <p class="lead mb-0"><a href="Blog-Details?blog_id=<?php echo $data[$j]["id"]; ?>" class="text-white fw-bold">Continue reading...</a></p>
+            <p class="lead mb-0"><a href="Blog-Details/<?php
+                $string = str_replace(" ", "-", $data[$j]["title"]);
+                echo $string;
+                ?>" class="text-white fw-bold">Continue reading...</a></p>
         </div>
         <div class="col-md-6">
             <img src="<?php echo $data[$j]["image"]; ?>" class="img-fluid" alt=""/>
@@ -92,7 +95,10 @@ $db_handle = new DBController();
                     <p class="card-text mb-auto">
                         <?php echo substr($data[$j]["description"],0,142).'...'; ?>
                     </p>
-                    <a href="Blog-Details?blog_id=<?php echo $data[$j]["id"]; ?>" class="stretched-link">Continue reading</a>
+                    <a href="Blog-Details/<?php
+                    $string = str_replace(" ", "-", $data[$j]["title"]);
+                    echo $string;
+                    ?>" class="stretched-link">Continue reading</a>
                 </div>
                 <div class="col-5 d-flex justify-content-center align-items-center">
                     <img src="<?php echo $data[$j]["image"]; ?>" class="img-fluid" alt=""/>
