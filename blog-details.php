@@ -28,9 +28,36 @@ $db_handle = new DBController();
     $title=substr($url, strrpos($url, '/') + 1);
 
     $string = str_replace("-", " ", $title);
+
+    $description='';
+    $image='';
+    if (!isset($title)) {
+        echo "<script>
+                window.location.href='../Blog';
+                </script>";
+    } else {
+
+        $query = "SELECT * FROM blog,blog_category where blog.blog_cate_id=blog_category.id and blog.title='$string' order by rand() desc limit 4";
+
+        $data = $db_handle->runQuery($query);
+        $row = $db_handle->numRows($query);
+        for ($j = 0; $j < $row; $j++) {
+            $image=$data[$j]["image"];
+            $description=$data[$j]["description"];
+        }
+    }
     ?>
+    <meta name="description" content="<?php echo substr($description, 0, 155); ?>">
+    <meta name="keywords" content="CouponXHosting">
+    <meta name="author" content="CouponXHosting">
 
-
+    <meta property="og:title" content="<?php echo $string; ?>" />
+    <meta property="og:description" content="<?php echo substr($description, 0, 155); ?>" />
+    <meta content="http://couponxhosting.com/<?php echo $image; ?>" property="og:image"/>
+    <meta content="<?php echo $string; ?>" property="og:image:alt"/>
+    <meta content="<?php echo $string; ?>" property="og:description"/>
+    <meta content="https://couponxhosting.com/" property="og:url"/>
+    <meta content="website" property="og:type"/>
 
     <title><?php echo $string; ?> - CouponXHosting</title>
 </head>
