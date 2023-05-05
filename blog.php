@@ -130,7 +130,7 @@ $db_handle = new DBController();
         $row = $db_handle->numRows($query);
         for ($j = 0; $j < $row; $j++) {
             ?>
-            <a class="p-2 link-secondary" href="<?php echo $extension; ?>Blog/<?php echo $data[$j]["bc_name"]; ?>"><?php echo $data[$j]["bc_name"]; ?></a>
+            <a class="p-2 link-secondary" href="<?php echo $extension; ?>Blog/<?php echo str_replace(" ", "-", $data[$j]["bc_name"]); ?>"><?php echo $data[$j]["bc_name"]; ?></a>
             <?php
         }
         ?>

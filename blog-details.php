@@ -67,7 +67,7 @@ $db_handle = new DBController();
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="../Home"><img src="assets/images/logo/logo-white.png" class="img-fluid"
+                <a class="navbar-brand" href="../Home"><img src="../assets/images/logo/logo-white.png" class="img-fluid"
                                                          alt=""/></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -138,7 +138,7 @@ $db_handle = new DBController();
         for ($j = 0; $j < $row; $j++) {
             ?>
             <a class="p-2 link-secondary"
-               href="../Blog/category_id=<?php echo $data[$j]["id"]; ?>"><?php echo $data[$j]["bc_name"]; ?></a>
+               href="../Blog/<?php echo str_replace(" ", "-", $data[$j]["bc_name"]); ?>"><?php echo $data[$j]["bc_name"]; ?></a>
             <?php
         }
         ?>
