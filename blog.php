@@ -9,13 +9,116 @@ $db_handle = new DBController();
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <?php require_once('include/css.php'); ?>
 
-    <title>Blog - CouponXHosting</title>
+    <?php
+    $url=$_SERVER['REQUEST_URI'];
+    $title=substr($url, strrpos($url, '/') + 1);
+
+    $string = str_replace("-", " ", $title);
+
+    $extension='../';
+    $bcName='';
+    if ($title=='Blog') {
+        $extension='';
+    } else {
+
+        $query = "SELECT * FROM blog_category where bc_name='$string'";
+
+        $data = $db_handle->runQuery($query);
+        $row = $db_handle->numRows($query);
+        for ($j = 0; $j < $row; $j++) {
+            $bcName=$data[$j]["bc_name"];
+        }
+
+        if($row==0){
+            echo "<script>
+                window.location.href='../Blog';
+                </script>";
+        }
+    }
+    ?>
+
+    <!-- Bootstrap CSS -->
+    <link href="<?php echo $extension; ?>assets/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="<?php echo $extension; ?>assets/vendors/font-awesome/css/all.min.css"/>
+
+    <!-- Swiper CSS -->
+    <link rel='stylesheet' href='<?php echo $extension; ?>assets/vendors/swiper/css/swiper.min.css'>
+
+    <!-- Style CSS -->
+    <link rel='stylesheet' href='<?php echo $extension; ?>assets/css/style.css'>
+
+    <link rel="icon" type="image/x-icon" href="<?php echo $extension; ?>assets/images/logo/favicon.png">
+
+    <title><?php echo $bcName; ?> Blog - CouponXHosting</title>
 </head>
 <body>
 <!-- NAV Start -->
-<?php require_once('include/menu.php'); ?>
+<header class="bg-dark">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="Home"><img src="<?php echo $extension; ?>assets/images/logo/logo-white.png" class="img-fluid"
+                                                         alt=""/></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" aria-current="page" href="<?php echo $extension; ?>Savings">Savings</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown"
+                               aria-expanded="false">
+                                Store
+                            </a>
+                            <ul class="dropdown-menu multi-level">
+                                <?php
+                                $category_data = $db_handle->runQuery("SELECT * FROM category where status=1 order by id asc");
+                                $row_count = $db_handle->numRows("SELECT * FROM category where status=1 order by id asc");
+
+                                for ($i = 0; $i < $row_count; $i++) {
+                                    ?>
+                                    <li class="dropdown-submenu">
+                                        <a href="<?php echo $extension; ?>Category?category_id=<?php echo $category_data[$i]["id"]; ?>" class="dropdown-item dropdown-toggle"
+                                           data-toggle="dropdown"><?php echo $category_data[$i]["c_name"]; ?></a>
+                                        <ul class="dropdown-menu">
+                                            <?php
+                                            $id=$category_data[$i]["id"];
+
+                                            $store_data = $db_handle->runQuery("SELECT * FROM store where category_id={$id} and status=1 order by id asc");
+                                            $row = $db_handle->numRows("SELECT * FROM store where category_id={$id} and status=1 order by id asc");
+
+                                            for ($j = 0; $j < $row; $j++) {
+                                                ?>
+                                                <li><a href="<?php echo $extension; ?>Stores?domain=<?php echo $store_data[$j]["s_domain"]; ?>" class="dropdown-item"><?php echo $store_data[$j]["s_name"]; ?></a></li>
+                                            <?php } ?>
+                                        </ul>
+                                    </li>
+                                <?php } ?>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="<?php echo $extension; ?>Offer">Offer</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="<?php echo $extension; ?>Blog">Blog</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
 <!-- NAV End -->
 
 <div class="container nav-scroller py-1 mb-2">
@@ -27,7 +130,7 @@ $db_handle = new DBController();
         $row = $db_handle->numRows($query);
         for ($j = 0; $j < $row; $j++) {
             ?>
-            <a class="p-2 link-secondary" href="Blog?category_id=<?php echo $data[$j]["id"]; ?>"><?php echo $data[$j]["bc_name"]; ?></a>
+            <a class="p-2 link-secondary" href="<?php echo $extension; ?>Blog/<?php echo $data[$j]["bc_name"]; ?>"><?php echo $data[$j]["bc_name"]; ?></a>
             <?php
         }
         ?>
@@ -37,11 +140,13 @@ $db_handle = new DBController();
 <main class="container">
     <?php
     $category='';
-    if(isset($_GET['category_id'])){
-        $category=" where blog.blog_cate_id=".$_GET['category_id'];
-    }
 
-    $query="SELECT * FROM blog".$category." order by id desc limit 1";
+    $query="SELECT * FROM blog order by id desc limit 1";
+
+    if($bcName!=''){
+        $category=",blog_category where blog_category.id=blog.blog_cate_id and blog_category.bc_name='".$bcName."'";
+        $query="SELECT * FROM blog".$category." order by blog.id desc limit 1";
+    }
 
     $data = $db_handle->runQuery($query);
     $row = $db_handle->numRows($query);
@@ -53,13 +158,13 @@ $db_handle = new DBController();
             <p class="lead my-3">
                 <?php echo substr($data[$j]["description"],0,142).'...'; ?>
             </p>
-            <p class="lead mb-0"><a href="Blog-Details/<?php
+            <p class="lead mb-0"><a href="<?php echo $extension; ?>Blog-Details/<?php
                 $string = str_replace(" ", "-", $data[$j]["title"]);
                 echo $string;
                 ?>" class="text-white fw-bold">Continue reading...</a></p>
         </div>
         <div class="col-md-6">
-            <img src="<?php echo $data[$j]["image"]; ?>" class="img-fluid" alt=""/>
+            <img src="<?php echo $extension; ?><?php echo $data[$j]["image"]; ?>" class="img-fluid" alt=""/>
         </div>
     </div>
         <?php
@@ -67,8 +172,8 @@ $db_handle = new DBController();
     ?>
     <div class="row">
         <?php
-        if(isset($_GET['category_id'])){
-            $category=" and blog.blog_cate_id=".$_GET['category_id'];
+        if($bcName!=''){
+            $category=" and blog_category.bc_name='".$bcName."'";
         }
 
 
@@ -95,13 +200,13 @@ $db_handle = new DBController();
                     <p class="card-text mb-auto">
                         <?php echo substr($data[$j]["description"],0,142).'...'; ?>
                     </p>
-                    <a href="Blog-Details/<?php
+                    <a href="<?php echo $extension; ?>Blog-Details/<?php
                     $string = str_replace(" ", "-", $data[$j]["title"]);
                     echo $string;
                     ?>" class="stretched-link">Continue reading</a>
                 </div>
                 <div class="col-5 d-flex justify-content-center align-items-center">
-                    <img src="<?php echo $data[$j]["image"]; ?>" class="img-fluid" alt=""/>
+                    <img src="<?php echo $extension; ?><?php echo $data[$j]["image"]; ?>" class="img-fluid" alt=""/>
                 </div>
             </div>
         </div>
@@ -117,7 +222,7 @@ $db_handle = new DBController();
             <div class="col-lg-6 mt-3">
                 <div class="d-flex align-items-center">
                     <div class="text-end">
-                        <img src="assets/images/savings-banner/3.webp" class="img-fluid" alt=""/>
+                        <img src="<?php echo $extension; ?>assets/images/savings-banner/3.webp" class="img-fluid" alt=""/>
                     </div>
                 </div>
             </div>
@@ -139,7 +244,17 @@ $db_handle = new DBController();
 <?php require_once('include/footer.php'); ?>
 <!-- Footer End -->
 
-<?php require_once('include/js.php'); ?>
+<!-- Bootstrap JS -->
+<script src="<?php echo $extension; ?>assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Swiper JS -->
+<script src="<?php echo $extension; ?>assets/vendors/swiper/js/swiper.min.js"></script>
+
+<!-- JQuery JS -->
+<script src="<?php echo $extension; ?>assets/vendors/jquery/jquery.min.js"></script>
+
+<!-- Main JS -->
+<script src="<?php echo $extension; ?>assets/js/main.js"></script>
 
 </body>
 </html>

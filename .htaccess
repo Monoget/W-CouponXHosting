@@ -6,7 +6,7 @@ RewriteRule ^Category category.php [NE,L]
 
 RewriteRule ^Blog\-Details(.*) blog-details.php$1
 
-RewriteRule ^Blog blog.php [NE,L]
+RewriteRule ^Blog(.*) blog.php$1
 
 RewriteRule ^Offer offer.php [NE,L]
 

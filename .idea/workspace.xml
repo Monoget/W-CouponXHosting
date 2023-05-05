@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cb97298-c149-4499-b18c-e621f7d8582d" name="Changes" comment="Blog details changed">
+    <list default="true" id="7cb97298-c149-4499-b18c-e621f7d8582d" name="Changes" comment="Blog details updated">
+      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog-details.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog-details.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +86,7 @@
       <workItem from="1682267426371" duration="8000" />
       <workItem from="1682272190189" duration="49000" />
       <workItem from="1683234119266" duration="549000" />
-      <workItem from="1683258522637" duration="1644000" />
+      <workItem from="1683258522637" duration="3573000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1668779396037</created>
@@ -338,7 +340,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683259638919</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Blog details updated">
+      <created>1683260277703</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1683260277703</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,6 +389,7 @@
     <MESSAGE value="update store" />
     <MESSAGE value="update all" />
     <MESSAGE value="Blog details changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Blog details changed" />
+    <MESSAGE value="Blog details updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Blog details updated" />
   </component>
 </project>

@@ -37,7 +37,7 @@ $db_handle = new DBController();
                 </script>";
     } else {
 
-        $query = "SELECT * FROM blog,blog_category where blog.blog_cate_id=blog_category.id and blog.title='$string' order by rand() desc limit 4";
+        $query = "SELECT * FROM blog,blog_category where blog.blog_cate_id=blog_category.id and blog.title='$string'";
 
         $data = $db_handle->runQuery($query);
         $row = $db_handle->numRows($query);
@@ -47,12 +47,12 @@ $db_handle = new DBController();
         }
     }
     ?>
-    <meta name="description" content="<?php echo substr($description, 0, 155); ?>">
+    <meta name="description" content="<?php echo substr($string, 0, 155); ?>">
     <meta name="keywords" content="CouponXHosting">
     <meta name="author" content="CouponXHosting">
 
     <meta property="og:title" content="<?php echo $string; ?>" />
-    <meta property="og:description" content="<?php echo substr($description, 0, 155); ?>" />
+    <meta property="og:description" content="<?php echo substr($string, 0, 155); ?>" />
     <meta content="http://couponxhosting.com/<?php echo $image; ?>" property="og:image"/>
     <meta content="<?php echo $string; ?>" property="og:image:alt"/>
     <meta content="<?php echo $string; ?>" property="og:description"/>
@@ -155,7 +155,7 @@ $db_handle = new DBController();
                 </script>";
         } else {
 
-            $query = "SELECT * FROM blog,blog_category where blog.blog_cate_id=blog_category.id and blog.title='$string' order by rand() desc limit 4";
+            $query = "SELECT * FROM blog,blog_category where blog.blog_cate_id=blog_category.id and blog.title='$string'";
 
             $data = $db_handle->runQuery($query);
             $row = $db_handle->numRows($query);
@@ -163,7 +163,7 @@ $db_handle = new DBController();
                 ?>
                 <div class="col-12 mb-5">
                     <div class="text-center">
-                        <img src="<?php echo $data[$j]["image"]; ?>" class="img-fluid" alt=""/>
+                        <img src="../<?php echo $data[$j]["image"]; ?>" class="img-fluid" alt=""/>
                     </div>
                     <h3 class="mb-0 mt-3"><?php echo $data[$j]["title"]; ?></h3>
                     <div class="card-text mb-auto">
@@ -205,7 +205,7 @@ $db_handle = new DBController();
                             reading</a>
                     </div>
                     <div class="col-5 d-flex justify-content-center align-items-center">
-                        <img src="<?php echo $data[$j]["image"]; ?>" class="img-fluid" alt=""/>
+                        <img src="../<?php echo $data[$j]["image"]; ?>" class="img-fluid" alt=""/>
                     </div>
                 </div>
             </div>
