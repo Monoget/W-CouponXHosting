@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cb97298-c149-4499-b18c-e621f7d8582d" name="Changes" comment="update blog &amp; blog detail">
+      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/add-blog-category.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add-blog-category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/add-blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add-blog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/blog-category.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/blog-category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/blog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/include/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/include/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/insert.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/insert.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/update.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/update.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-details.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog-details.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/category.php" beforeDir="false" afterPath="$PROJECT_DIR$/category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/include/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stores.php" beforeDir="false" afterPath="$PROJECT_DIR$/stores.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +88,10 @@
       <workItem from="1682272190189" duration="49000" />
       <workItem from="1683234119266" duration="549000" />
       <workItem from="1683258522637" duration="5409000" />
-      <workItem from="1683292457746" duration="2880000" />
+      <workItem from="1683292457746" duration="4272000" />
+      <workItem from="1683489231492" duration="402000" />
+      <workItem from="1683568340651" duration="599000" />
+      <workItem from="1683649526906" duration="2067000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1668779396037</created>
@@ -375,7 +373,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683295825629</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="update blog &amp; blog detail">
+      <created>1683295912020</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1683295912020</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

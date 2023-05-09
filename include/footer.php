@@ -32,13 +32,13 @@
             <div class="col-lg-10">
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Terms and Condition</a>
+                        <a class="nav-link active" aria-current="page" href="Terms-and-Condition">Terms and Condition</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Privacy Policy</a>
+                        <a class="nav-link" href="Privacy-Policy">Privacy Policy</a>
                     </li>
                 </ul>
                 <p class="text-center">

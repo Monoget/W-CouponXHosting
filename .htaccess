@@ -13,3 +13,7 @@ RewriteRule ^Offer offer.php [NE,L]
 RewriteRule ^Savings savings.php [NE,L]
 
 RewriteRule ^Stores stores.php [NE,L]
+
+RewriteRule ^Terms-and-Condition terms-and-condition.php [NE,L]
+
+RewriteRule ^Privacy-Policy privacy-policy.php [NE,L]

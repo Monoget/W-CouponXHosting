@@ -4,8 +4,20 @@ $db_handle = new DBController();
 
 $store_id=0;
 if (isset($_GET['domain'])) {
-    $page_store_data = $db_handle->runQuery("SELECT * FROM store where s_domain='{$_GET['domain']}'");
+    $query="SELECT * FROM store where s_domain='{$_GET['domain']}'";
+    $page_store_data = $db_handle->runQuery($query);
+    $row=$db_handle->numRows($query);
     $store_id=$page_store_data[0]['id'];
+
+    if($row<=0){
+        ?>
+        <script>
+            window.location.href = "Home";
+        </script>
+        <?php
+    }
+
+
 } else {
     ?>
     <script>
@@ -23,7 +35,7 @@ if (isset($_GET['domain'])) {
 
     <?php require_once('include/css.php'); ?>
 
-    <meta name="description" content="><?php echo $page_store_data[0]["meta_description"]; ?>">
+    <meta name="description" content="<?php echo $page_store_data[0]["meta_description"]; ?>">
     <meta name="keywords" content="<?php echo $page_store_data[0]["meta_keyword"]; ?>">
 
     <title><?php echo $page_store_data[0]["meta_title"]; ?></title>

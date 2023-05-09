@@ -4,8 +4,18 @@ $db_handle = new DBController();
 
 $category_id = 0;
 if (isset($_GET['category_id'])) {
-    $category_data = $db_handle->runQuery("SELECT * FROM category where id='{$_GET['category_id']}'");
+    $query="SELECT * FROM category where id={$_GET['category_id']}";
+    $category_data = $db_handle->runQuery($query);
+    $row=$db_handle->numRows($query);
     $category_id = $category_data[0]['id'];
+
+    if($row<=0){
+        ?>
+        <script>
+            window.location.href = "Home";
+        </script>
+        <?php
+    }
 } else {
     ?>
     <script>
@@ -23,7 +33,7 @@ if (isset($_GET['category_id'])) {
 
     <?php require_once('include/css.php'); ?>
 
-    <meta name="description" content="><?php echo $category_data[0]["c_name"]; ?>">
+    <meta name="description" content="<?php echo $category_data[0]["c_name"]; ?>">
     <meta name="keywords" content="<?php echo $category_data[0]["c_name"]; ?>">
 
     <title><?php echo $category_data[0]["c_name"]; ?> - CouponXHosting</title>
