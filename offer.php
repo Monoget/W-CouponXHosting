@@ -41,7 +41,15 @@ $db_handle = new DBController();
         </div>
         <div class="row">
             <?php
-            $query = "SELECT * FROM offer,store where store.id=offer.store_id order by rand() limit 6";
+            $offer='';
+            $whereoffer='';
+            if(isset($_GET['offer'])){
+                $offer=" and title like '%".$_GET['offer']."%' or subtitle like '%".$_GET['offer']."%'";
+                $whereoffer="where title like '%".$_GET['offer']."%' or subtitle like '%".$_GET['offer']."%' ";
+            }
+
+
+            $query = "SELECT * FROM offer,store where store.id=offer.store_id".$offer." order by rand() limit 6";
 
             $data = $db_handle->runQuery($query);
             $row = $db_handle->numRows($query);
@@ -73,7 +81,7 @@ $db_handle = new DBController();
             <div class="col-lg-3">
                 <h6>
                     <?php
-                    $row = $db_handle->numRows("SELECT * FROM offer order by id desc");
+                    $row = $db_handle->numRows("SELECT * FROM offer ".$whereoffer."order by id desc");
                     echo $row;
                     ?>
                     Offers Available
@@ -146,13 +154,13 @@ $db_handle = new DBController();
                     $next_page = $page_no + 1;
                     $adjacents = "2";
 
-                    $row = $db_handle->numRows("SELECT * FROM offer order by id desc");
+                    $row = $db_handle->numRows("SELECT * FROM offer ".$whereoffer."order by id desc");
 
                     $total_no_of_pages = ceil($row / $total_records_per_page);
                     $second_last = $total_no_of_pages - 1; // total page minus 1
 
 
-                    $query = "SELECT * FROM offer,store where store.id=offer.store_id order by offer.id desc LIMIT $offset, $total_records_per_page";
+                    $query = "SELECT * FROM offer,store where store.id=offer.store_id".$offer." order by offer.id desc LIMIT $offset, $total_records_per_page";
 
                     $data = $db_handle->runQuery($query);
                     $row = $db_handle->numRows($query);
@@ -174,6 +182,13 @@ $db_handle = new DBController();
                         </div>
                         <?php
                     }
+
+                    $offer='';
+                    if(isset($_GET['offer'])){
+                        $offer='offer='.$_GET['offer'].'&';
+                    }
+
+
                     ?>
                 </div>
                 <div class="row mt-5">
@@ -196,7 +211,7 @@ $db_handle = new DBController();
                                         if ($counter == $page_no) {
                                             echo "<li class='page-item active'><a class='page-link'>$counter</a></li>";
                                         } else {
-                                            echo "<li class='page-item'><a class='page-link' href='?page_no=$counter'>$counter</a></li>";
+                                            echo "<li class='page-item'><a class='page-link' href='?".$offer."page_no=$counter'>$counter</a></li>";
                                         }
                                     }
                                 } elseif ($total_no_of_pages > 10) {
@@ -206,36 +221,36 @@ $db_handle = new DBController();
                                             if ($counter == $page_no) {
                                                 echo "<li class='page-item active'><a class='page-link'>$counter</a></li>";
                                             } else {
-                                                echo "<li class='page-item'><a class='page-link' href='?page_no=$counter'>$counter</a></li>";
+                                                echo "<li class='page-item'><a class='page-link' href='?".$offer."page_no=$counter'>$counter</a></li>";
                                             }
                                         }
                                         echo "<li class='page-item'><a class='page-link'>...</a></li>";
-                                        echo "<li class='page-item'><a class='page-link' href='?page_no=$second_last'>$second_last</a></li>";
-                                        echo "<li class='page-item'><a class='page-link' href='?page_no=$total_no_of_pages'>$total_no_of_pages</a></li>";
+                                        echo "<li class='page-item'><a class='page-link' href='?".$offer."page_no=$second_last'>$second_last</a></li>";
+                                        echo "<li class='page-item'><a class='page-link' href='?".$offer."page_no=$total_no_of_pages'>$total_no_of_pages</a></li>";
                                     } elseif ($page_no > 4 && $page_no < $total_no_of_pages - 4) {
-                                        echo "<li class='page-item'><a class='page-link' href='?page_no=1'>1</a></li>";
-                                        echo "<li class='page-item'><a class='page-link' href='?page_no=2'>2</a></li>";
+                                        echo "<li class='page-item'><a class='page-link' href='?".$offer."page_no=1'>1</a></li>";
+                                        echo "<li class='page-item'><a class='page-link' href='?".$offer."page_no=2'>2</a></li>";
                                         echo "<li class='page-item'><a class='page-link'>...</a></li>";
                                         for ($counter = $page_no - $adjacents; $counter <= $page_no + $adjacents; $counter++) {
                                             if ($counter == $page_no) {
                                                 echo "<li class='page-item active'><a class='page-link'>$counter</a></li>";
                                             } else {
-                                                echo "<li class='page-item'><a class='page-link' href='?page_no=$counter'>$counter</a></li>";
+                                                echo "<li class='page-item'><a class='page-link' href='?".$offer."page_no=$counter'>$counter</a></li>";
                                             }
                                         }
                                         echo "<li class='page-item'><a class='page-link'>...</a></li>";
-                                        echo "<li class='page-item'><a class='page-link' href='?page_no=$second_last'>$second_last</a></li>";
+                                        echo "<li class='page-item'><a class='page-link' href='?".$offer."page_no=$second_last'>$second_last</a></li>";
                                         echo "<li><a href='?page_no=$total_no_of_pages'>$total_no_of_pages</a></li>";
                                     } else {
-                                        echo "<li class='page-item'><a class='page-link' href='?page_no=1'>1</a></li>";
-                                        echo "<li class='page-item'><a class='page-link' href='?page_no=2'>2</a></li>";
+                                        echo "<li class='page-item'><a class='page-link' href='?".$offer."page_no=1'>1</a></li>";
+                                        echo "<li class='page-item'><a class='page-link' href='?".$offer."page_no=2'>2</a></li>";
                                         echo "<li class='page-item'><a class='page-link'>...</a></li>";
 
                                         for ($counter = $total_no_of_pages - 6; $counter <= $total_no_of_pages; $counter++) {
                                             if ($counter == $page_no) {
                                                 echo "<li class='page-item active'><a class='page-link'>$counter</a></li>";
                                             } else {
-                                                echo "<li class='page-item'><a class='page-link' href='?page_no=$counter'>$counter</a></li>";
+                                                echo "<li class='page-item'><a class='page-link' href='?".$offer."page_no=$counter'>$counter</a></li>";
                                             }
                                         }
                                     }
@@ -245,7 +260,7 @@ $db_handle = new DBController();
                                     echo "class='disabled'";
                                 } ?>>
                                     <a class="page-link" <?php if ($page_no < $total_no_of_pages) {
-                                        echo "href='?page_no=$next_page'";
+                                        echo "href='?".$offer."page_no=$next_page'";
                                     } ?>>
                                         Next
                                     </a>
