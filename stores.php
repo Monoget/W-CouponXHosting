@@ -113,7 +113,7 @@ if (isset($_GET['domain'])) {
                             ?>
                             <li class="nav-item">
                                 <a class="nav-link text-dark"
-                                   href="Stores?domain=<?php echo $data[$j]["s_domain"]; ?>"><?php echo $data[$j]["s_name"]; ?></a>
+                                   href="Stores/<?php echo str_replace(" ", "-", $data[$j]["s_name"]); ?>"><?php echo $data[$j]["s_name"]; ?></a>
                             </li>
                         <?php } ?>
                     </ul>

@@ -98,7 +98,7 @@ $db_handle = new DBController();
                                 for ($i = 0; $i < $row_count; $i++) {
                                     ?>
                                     <li class="dropdown-submenu">
-                                        <a href="<?php echo $extension; ?>Category?category_id=<?php echo $category_data[$i]["id"]; ?>" class="dropdown-item dropdown-toggle"
+                                        <a href="<?php echo $extension; ?>Category/<?php echo str_replace(" ", "-", $category_data[$i]["c_name"]); ?>" class="dropdown-item dropdown-toggle"
                                            data-toggle="dropdown"><?php echo $category_data[$i]["c_name"]; ?></a>
                                         <ul class="dropdown-menu">
                                             <?php
@@ -109,7 +109,7 @@ $db_handle = new DBController();
 
                                             for ($j = 0; $j < $row; $j++) {
                                                 ?>
-                                                <li><a href="<?php echo $extension; ?>Stores?domain=<?php echo $store_data[$j]["s_domain"]; ?>" class="dropdown-item"><?php echo $store_data[$j]["s_name"]; ?></a></li>
+                                                <li><a href="<?php echo $extension; ?>Stores/<?php echo str_replace(" ", "-", $store_data[$j]["s_name"]); ?>" class="dropdown-item"><?php echo $store_data[$j]["s_name"]; ?></a></li>
                                             <?php } ?>
                                         </ul>
                                     </li>

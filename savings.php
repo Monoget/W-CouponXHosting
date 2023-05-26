@@ -98,7 +98,7 @@ $db_handle = new DBController();
             for ($j = 0; $j < $row; $j++) {
                 ?>
                 <div class="col-lg-3">
-                    <a class="text-decoration-none text-dark" href="Stores?domain=<?php echo $data[$j]["s_domain"]; ?>">
+                    <a class="text-decoration-none text-dark" href="Stores/<?php echo str_replace(" ", "-", $data[$j]["s_name"]); ?>">
                         <div class="card mt-3">
                             <img class="card-img" src="<?php echo $data[$j]["image"]; ?>"
                                  alt="a snow-capped mountain range"/>
@@ -142,7 +142,7 @@ $db_handle = new DBController();
             for ($j = 0; $j < $row; $j++) {
                 ?>
                 <div class="col-lg-3">
-                    <a class="text-decoration-none text-dark" href="Stores?domain=<?php echo $data[$j]["s_domain"]; ?>">
+                    <a class="text-decoration-none text-dark" href="Stores/<?php echo str_replace(" ", "-", $data[$j]["s_name"]); ?>">
                         <div class="card mt-3">
                             <img class="card-img" src="<?php echo $data[$j]["image"]; ?>"
                                  alt="a snow-capped mountain range"/>
@@ -180,7 +180,7 @@ $db_handle = new DBController();
             for ($j = 0; $j < $row; $j++) {
                 ?>
                 <div class="col-lg-2 col-6">
-                    <a class="text-decoration-none text-dark" href="Stores?domain=<?php echo $data[$j]["s_domain"]; ?>">
+                    <a class="text-decoration-none text-dark" href="Stores/<?php echo str_replace(" ", "-", $data[$j]["s_name"]); ?>">
                         <div class="mt-3 d-flex justify-content-center">
                             <div class="text-center">
                                 <img src="<?php echo $data[$j]["image"]; ?>" class="img-fluid alternative-logo" alt=""/>
@@ -343,7 +343,7 @@ $db_handle = new DBController();
             for ($j = 0; $j < $row; $j++) {
                 ?>
                 <div class="col-lg-3">
-                    <a class="text-decoration-none text-dark" href="Stores?domain=<?php echo $data[$j]["s_domain"]; ?>">
+                    <a class="text-decoration-none text-dark" href="Stores/<?php echo str_replace(" ", "-", $data[$j]["s_name"]); ?>">
                         <div class="card mt-3">
                             <img class="card-img" src="<?php echo $data[$j]["image"]; ?>"
                                  alt="a snow-capped mountain range"/>
@@ -387,7 +387,7 @@ $db_handle = new DBController();
             for ($j = 0; $j < $row; $j++) {
                 ?>
                 <div class="col-lg-3">
-                    <a class="text-decoration-none text-dark" href="Stores?domain=<?php echo $data[$j]["s_domain"]; ?>">
+                    <a class="text-decoration-none text-dark" href="Stores/<?php echo str_replace(" ", "-", $data[$j]["s_name"]); ?>">
                         <div class="card mt-3">
                             <img class="card-img" src="<?php echo $data[$j]["image"]; ?>"
                                  alt="a snow-capped mountain range"/>
@@ -431,7 +431,7 @@ $db_handle = new DBController();
             for ($j = 0; $j < $row; $j++) {
                 ?>
                 <div class="col-lg-3">
-                    <a class="text-decoration-none text-dark" href="Stores?domain=<?php echo $data[$j]["s_domain"]; ?>">
+                    <a class="text-decoration-none text-dark" href="Stores/<?php echo str_replace(" ", "-", $data[$j]["s_name"]); ?>">
                         <div class="card mt-3">
                             <img class="card-img" src="<?php echo $data[$j]["image"]; ?>"
                                  alt="a snow-capped mountain range"/>

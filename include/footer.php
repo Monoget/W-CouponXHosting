@@ -17,7 +17,7 @@
                     for ($j = 0; $j < $row; $j++) {
                         ?>
                         <div class="col-lg-3">
-                            <a class="text-decoration-none text-dark" href="Category?category_id=<?php echo $data[$j]["id"]; ?>"><p><small><?php echo $data[$j]["c_name"]; ?></small></p></a>
+                            <a class="text-decoration-none text-dark" href="Category/<?php echo str_replace(" ", "-", $data[$j]["c_name"]); ?>"><p><small><?php echo $data[$j]["c_name"]; ?></small></p></a>
                         </div>
                         <?php
                     }

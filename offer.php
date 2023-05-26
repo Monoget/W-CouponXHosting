@@ -48,7 +48,7 @@ $db_handle = new DBController();
             for ($j = 0; $j < $row; $j++) {
                 ?>
                 <div class="col-lg-2">
-                    <a class="text-decoration-none text-dark" href="Stores?domain=<?php echo $data[$j]["s_domain"]; ?>">
+                    <a class="text-decoration-none text-dark" href="Stores/<?php echo str_replace(" ", "-", $data[$j]["s_name"]); ?>">
                         <div class="card mt-3">
                             <img class="card-img" src="<?php echo $data[$j]["image"]; ?>"
                                  alt="a snow-capped mountain range"/>
@@ -96,7 +96,7 @@ $db_handle = new DBController();
                             ?>
                             <li class="nav-item">
                                 <a class="text-decoration-none text-dark"
-                                   href="Category?category_id=<?php echo $data[$j]["id"]; ?>">
+                                   href="Category/<?php echo str_replace(" ", "-", $data[$j]["c_name"]); ?>">
                                     <p class="form-check-label">
                                         <?php echo $data[$j]["c_name"]; ?>
                                     </p>
@@ -119,7 +119,7 @@ $db_handle = new DBController();
                             ?>
                             <li class="nav-item">
                                 <a class="text-decoration-none text-dark"
-                                   href="Stores?domain=<?php echo $data[$j]["s_domain"]; ?>">
+                                   href="Stores/<?php echo str_replace(" ", "-", $data[$j]["s_name"]); ?>">
                                     <p class="form-check-label">
                                         <?php echo $data[$j]["s_name"]; ?>
                                     </p>
@@ -160,7 +160,7 @@ $db_handle = new DBController();
                         ?>
                         <div class="col-lg-4">
                             <a class="text-decoration-none text-dark"
-                               href="Stores?domain=<?php echo $data[$j]["s_domain"]; ?>">
+                               href="Stores/<?php echo str_replace(" ", "-", $data[$j]["s_name"]); ?>">
                                 <div class="card mt-3">
                                     <img class="card-img" src="<?php echo $data[$j]["image"]; ?>"
                                          alt="a snow-capped mountain range"/>
