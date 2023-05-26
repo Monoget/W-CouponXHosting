@@ -73,8 +73,8 @@ $db_handle = new DBController();
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="Home"><img src="<?php echo $extension; ?>assets/images/logo/logo-white.png" class="img-fluid"
-                                                         alt=""/></a>
+                <a class="navbar-brand" href="Home"><img src="<?php echo $extension; ?>assets/images/logo/logo.png" class="img-fluid"
+                                                         alt="" style="max-height:80px"/></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">

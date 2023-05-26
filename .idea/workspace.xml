@@ -4,12 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cb97298-c149-4499-b18c-e621f7d8582d" name="Changes" comment="update blog &amp; blog detail">
+    <list default="true" id="7cb97298-c149-4499-b18c-e621f7d8582d" name="Changes" comment="update privacy policy">
       <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category.php" beforeDir="false" afterPath="$PROJECT_DIR$/category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/include/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stores.php" beforeDir="false" afterPath="$PROJECT_DIR$/stores.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/add-blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add-blog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/blog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/include/delete.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/include/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/include/navbar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/insert.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/insert.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/logo/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/logo/favicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/savings-banner/3.webp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/savings-banner/3.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-details.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog-details.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/coupgkvg_coupon.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/include/menu.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +99,11 @@
       <workItem from="1683292457746" duration="4272000" />
       <workItem from="1683489231492" duration="402000" />
       <workItem from="1683568340651" duration="599000" />
-      <workItem from="1683649526906" duration="2067000" />
+      <workItem from="1683649526906" duration="2814000" />
+      <workItem from="1683737735931" duration="8000" />
+      <workItem from="1684089782141" duration="454000" />
+      <workItem from="1684168626179" duration="12000" />
+      <workItem from="1685107203605" duration="325000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1668779396037</created>
@@ -380,7 +392,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683295912020</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="update privacy policy">
+      <created>1683652309272</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1683652309272</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,7 +417,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update admin category" />
     <MESSAGE value="update admin store" />
     <MESSAGE value="store menu done" />
     <MESSAGE value="trending deal done" />
@@ -423,6 +441,7 @@
     <MESSAGE value="Blog details changed" />
     <MESSAGE value="Blog details updated" />
     <MESSAGE value="update blog &amp; blog detail" />
-    <option name="LAST_COMMIT_MESSAGE" value="update blog &amp; blog detail" />
+    <MESSAGE value="update privacy policy" />
+    <option name="LAST_COMMIT_MESSAGE" value="update privacy policy" />
   </component>
 </project>

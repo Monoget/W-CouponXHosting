@@ -236,8 +236,16 @@ if (isset($_POST["addBlog"])) {
 
     $insert = $db_handle->insertQuery("INSERT INTO `blog`(`blog_cate_id`, `title`, `meta_title`, `meta_description`,`description`, `image`, `inserted_at`) VALUES ('$blog_cate_id','$title','$meta_title','$meta_description','$description','$image','$inserted_at')");
 
-    echo "<script>
+    if($insert){
+        echo "<script>
                 document.cookie = 'alert = 3;';
                 window.location.href='Add-Blog';
                 </script>";
+    }else{
+        echo "<script>
+                document.cookie = 'alert = 5;';
+                window.location.href='Add-Blog';
+                </script>";
+    }
+
 }

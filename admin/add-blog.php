@@ -142,7 +142,7 @@ $db_handle = new DBController();
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Description</label>
                                         <div class="col-sm-9">
-                                            <textarea class="form-control" id="comment" rows="5" name="description" placeholder="Type your description..." required></textarea>
+                                            <textarea class="form-control" id="comment" rows="5" name="description" placeholder="Type your description..."></textarea>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">

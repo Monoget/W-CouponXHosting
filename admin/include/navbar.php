@@ -6,7 +6,17 @@
         <ul class="metismenu" id="menu">
             <li class="dropdown header-profile">
                 <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
-                    <?php $data = $db_handle->runQuery("SELECT * FROM admin_login where id={$_SESSION['userid']}"); ?>
+                    <?php
+                    $data='';
+
+                    if(isset($_SESSION['userid'])){
+                        $data = $db_handle->runQuery("SELECT * FROM admin_login where id={$_SESSION['userid']}");
+                    }else{
+                        echo "<script>
+                                    window.location.href='Login';
+                                    </script>";
+                    }
+                     ?>
                     <img src="../<?php echo $data[0]["image"]; ?>" width="20" alt=""/>
                     <div class="header-info ms-3">
                         <span class="font-w600 "><b><?php echo $data[0]["name"]; ?></b></span>
