@@ -103,11 +103,37 @@ $db_handle = new DBController();
                         </div>
                         <div class="card-body">
                             <div class="basic-form">
-                                <form action="Insert" method="post">
+                                <form action="Insert" method="post" enctype="multipart/form-data">
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Category Name</label>
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control" name="c_name" placeholder="Category Name" required>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label">Meta Title</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="meta_title" placeholder="Meta Title" required>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label">Meta Description</label>
+                                        <div class="col-sm-9">
+                                            <textarea class="form-control" name="meta_description" style="height: 100px" placeholder="Type your meta description..." required></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label">Meta Keyword</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="meta_keyword" placeholder="Meta Keyword" required>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label">Meta Image</label>
+                                        <div class="col-sm-9">
+                                            <div class="form-file">
+                                                <input type="file" class="form-file-input" name="meta_image" required/>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">

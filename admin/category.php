@@ -104,7 +104,7 @@ $db_handle = new DBController();
                             </div>
                             <div class="card-body">
                                 <div class="basic-form">
-                                    <form method="post" action="Update">
+                                    <form method="post" action="Update" enctype="multipart/form-data">
 
                                         <?php $data = $db_handle->runQuery("SELECT * FROM category where id={$_GET['catId']}"); ?>
 
@@ -116,6 +116,35 @@ $db_handle = new DBController();
                                                 <input type="text" class="form-control" name="c_name"
                                                        placeholder="Category Name"
                                                        value="<?php echo $data[0]["c_name"]; ?>" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Meta Title</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" name="meta_title" placeholder="Meta Title" value="<?php echo $data[0]["meta_title"]; ?>" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Meta Description</label>
+                                            <div class="col-sm-9">
+                                                <textarea class="form-control" name="meta_description" style="height: 100px" placeholder="Type your meta description..." required><?php echo $data[0]["meta_description"]; ?></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Meta Keyword</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" name="meta_keyword" placeholder="Meta Keyword" value="<?php echo $data[0]["meta_keywords"]; ?>" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Meta Image</label>
+                                            <div class="col-sm-6">
+                                                <div class="form-file">
+                                                    <input type="file" class="form-file-input" name="meta_image"/>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <img src="../<?php echo $data[0]["meta_image"]; ?>" class="img-fluid" alt=""/>
                                             </div>
                                         </div>
                                         <div class="mb-3 row">

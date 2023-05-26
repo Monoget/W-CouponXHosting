@@ -109,7 +109,7 @@ if (!isset($title)) {
                                 for ($i = 0; $i < $row_count; $i++) {
                                     ?>
                                     <li class="dropdown-submenu">
-                                        <a href="../Category?category_id=<?php echo $category_data[$i]["id"]; ?>" class="dropdown-item dropdown-toggle"
+                                        <a href="../Category/<?php echo str_replace(" ", "-", $category_data[$i]["c_name"]); ?>" class="dropdown-item dropdown-toggle"
                                            data-toggle="dropdown"><?php echo $category_data[$i]["c_name"]; ?></a>
                                         <ul class="dropdown-menu">
                                             <?php

@@ -12,9 +12,43 @@ if(!isset($_SESSION["userid"])){
 if (isset($_POST['updateCategory'])) {
     $id = $db_handle->checkValue($_POST['id']);
     $name = $db_handle->checkValue($_POST['c_name']);
+
+    $meta_title = $db_handle->checkValue($_POST['meta_title']);
+
+    $meta_description = $db_handle->checkValue($_POST['meta_description']);
+
+    $meta_keyword = $db_handle->checkValue($_POST['meta_keyword']);
+
     $status = $db_handle->checkValue($_POST['status']);
 
-    $update = $db_handle->insertQuery("update category set c_name='$name', status='$status' where id='{$id}'");
+    $image='';
+    $query='';
+
+    if (!empty($_FILES['meta_image']['name'])){
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber."_" . $_FILES['meta_image']['name'];
+        $file_size = $_FILES['meta_image']['size'];
+        $file_tmp = $_FILES['meta_image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if (
+            $file_type != "jpg" && $file_type != "png" && $file_type != "jpeg"
+            && $file_type != "gif"
+        ) {
+            $attach_files = '';
+        } else {
+
+            $data = $db_handle->runQuery("select * FROM `category` WHERE id='{$id}'");
+            unlink('../'.$data[0]['meta_image']);
+
+            move_uploaded_file($file_tmp, "../assets/images/category/" .$file_name);
+            $image = "assets/images/category/" . $file_name;
+            $query.=",`meta_image`=".$image;
+        }
+    }
+
+
+    $update = $db_handle->insertQuery("update category set c_name='$name',`meta_title`='$meta_title',`meta_description`='$meta_description',`meta_keywords`='$meta_keyword'".$query.", status='$status' where id='{$id}'");
 
     echo "<script>
                 document.cookie = 'alert = 3;';

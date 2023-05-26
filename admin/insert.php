@@ -13,9 +13,35 @@ if(!isset($_SESSION["userid"])){
 if (isset($_POST["addCategory"])) {
     $name = $db_handle->checkValue($_POST['c_name']);
 
+    $meta_title = $db_handle->checkValue($_POST['meta_title']);
+
+    $meta_description = $db_handle->checkValue($_POST['meta_description']);
+
+    $meta_keyword = $db_handle->checkValue($_POST['meta_keyword']);
+
+    $image='';
+
+    if (!empty($_FILES['meta_image']['name'])){
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber."_" . $_FILES['meta_image']['name'];
+        $file_size = $_FILES['meta_image']['size'];
+        $file_tmp = $_FILES['meta_image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if (
+            $file_type != "jpg" && $file_type != "png" && $file_type != "jpeg"
+            && $file_type != "gif"
+        ) {
+            $attach_files = '';
+        } else {
+            move_uploaded_file($file_tmp, "../assets/images/category/" .$file_name);
+            $image = "assets/images/category/" . $file_name;
+        }
+    }
+
     $inserted_at = date("Y-m-d H:i:s");
 
-    $insert = $db_handle->insertQuery("INSERT INTO `category`(`c_name`,  `inserted_at`) VALUES ('$name','$inserted_at')");
+    $insert = $db_handle->insertQuery("INSERT INTO `category`(`c_name`, `meta_title`, `meta_description`, `meta_keywords`, `meta_image`,  `inserted_at`) VALUES ('$name','$meta_title','$meta_description','$meta_keyword','$image','$inserted_at')");
 
     echo "<script>
                 document.cookie = 'alert = 3;';
