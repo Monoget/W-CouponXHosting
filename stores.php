@@ -3,7 +3,7 @@ require_once("include/dbController.php");
 $db_handle = new DBController();
 
 $url=$_SERVER['REQUEST_URI'];
-$title=substr($url, strrpos($url, '/') + 1);
+$title=strtok(substr($url, strrpos($url, '/') + 1),'?');
 
 $string = str_replace("-", " ", $title);
 
