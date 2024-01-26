@@ -9,11 +9,11 @@ class DBController {
     private $conn;
 
     function __construct() {
-        if($_SERVER['SERVER_NAME']=="couponxhosting.com"||$_SERVER['SERVER_NAME']=="www.couponxhosting.com"){
-            $this->host = "server323";
-            $this->user = "coupgkvg_coupon";
+        if($_SERVER['SERVER_NAME']=="couponxhosting.monoget.com.bd"||$_SERVER['SERVER_NAME']=="www.couponxhosting.monoget.com.bd"){
+            $this->host = "localhost";
+            $this->user = "ug7vrbqplwgwc";
             $this->password = ")@y=29nDeA(5";
-            $this->database = "coupgkvg_coupon";
+            $this->database = "dbsvrykx4go4hx";
         }
 
         $this->conn = $this->connectDB();
